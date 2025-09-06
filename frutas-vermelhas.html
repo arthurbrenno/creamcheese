@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cream Cheese Frutas Vermelhas - Frescor vibrante e cremosidade única. Artesanal, especial e premium.">
+    <title>Cream UP - Frutas Vermelhas | Frescor Vibrante</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+        
+        /* Cores customizadas da marca */
+        .bg-cream-blue { background-color: #235784; }
+        .bg-cream-light { background-color: #40A8C4; }
+        .bg-cream-yellow { background-color: #F7AA00; }
+        .bg-cream-gray { background-color: #EEF6F7; }
+        .text-cream-blue { color: #235784; }
+        .text-cream-light { color: #40A8C4; }
+        .text-cream-yellow { color: #F7AA00; }
+        .border-cream-yellow { border-color: #F7AA00; }
+        
+        /* Gradiente específico das frutas vermelhas */
+        .frutas-gradient { 
+            background: linear-gradient(135deg, #EC4899 0%, #F43F5E 30%, #EF4444 60%, #DC2626 100%); 
+        }
+        .frutas-light-gradient {
+            background: linear-gradient(145deg, #FDF2F8 0%, #FCE7F3 50%, #FEE2E2 100%);
+        }
+        
+        /* Animações */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+        .float-animation { animation: float 4s ease-in-out infinite; }
+        
+        @keyframes pulse-pink {
+            0%, 100% { box-shadow: 0 0 20px rgba(236, 72, 153, 0.3); }
+            50% { box-shadow: 0 0 30px rgba(236, 72, 153, 0.6); }
+        }
+        .pulse-pink { animation: pulse-pink 2s ease-in-out infinite; }
+        
+        @keyframes berry-bounce {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            25% { transform: scale(1.1) rotate(-3deg); }
+            50% { transform: scale(1.05) rotate(2deg); }
+            75% { transform: scale(1.08) rotate(-1deg); }
+        }
+        .berry-bounce { animation: berry-bounce 3s ease-in-out infinite; }
+        
+        @keyframes sparkle {
+            0%, 100% { opacity: 0.3; transform: scale(0.8); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+        .sparkle { animation: sparkle 2s ease-in-out infinite; }
+        
+        .hover-lift:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        html { scroll-behavior: smooth; }
+        
+        .menu-mobile {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        .menu-mobile.active {
+            transform: translateX(0);
+        }
+        
+        /* Gradiente texto */
+        .text-frutas-gradient {
+            background: linear-gradient(135deg, #EC4899, #F43F5E);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Efeito de brilho */
+        .frutas-shimmer {
+            background: linear-gradient(45deg, transparent 30%, rgba(236, 72, 153, 0.1) 50%, transparent 70%);
+            animation: shimmer 3s linear infinite;
+        }
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+        
+        /* Efeito de respingo */
+        .splash-effect {
+            position: relative;
+            overflow: hidden;
+        }
+        .splash-effect::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 30%, rgba(236, 72, 153, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 70%, rgba(244, 63, 94, 0.1) 0%, transparent 50%);
+            animation: splash-move 8s ease-in-out infinite;
+        }
+        @keyframes splash-move {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.1) rotate(5deg); }
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+    <!-- Header -->
+    <header class="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-lg z-50 transition-all duration-300">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-cream-yellow rounded-full flex items-center justify-center">
+                        <i class="fas fa-cheese text-white text-xl"></i>
+                    </div>
+                    <span class="text-2xl font-bold text-cream-blue">Cream UP</span>
+                </a>
+                
+                <!-- Menu Desktop -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-cream-blue transition-colors font-medium">Início</a>
+                    <div class="relative group">
+                        <a href="index.html#produtos" class="text-cream-blue font-medium cursor-pointer">Produtos</a>
+                        <div class="absolute top-full left-0 mt-2 w-48 bg-white shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                            <a href="damasco.html" class="block px-4 py-3 text-gray-700 hover:text-orange-600 transition-colors">🍑 Damasco</a>
+                            <a href="pimenta.html" class="block px-4 py-3 text-gray-700 hover:text-red-600 transition-colors">🌶️ Pimenta</a>
+                            <a href="alho.html" class="block px-4 py-3 text-gray-700 hover:text-green-600 transition-colors">🧄 Alho</a>
+                            <a href="frutas-vermelhas.html" class="block px-4 py-3 text-pink-600 font-medium border-l-4 border-pink-500">🍓 Frutas Vermelhas</a>
+                        </div>
+                    </div>
+                    <a href="index.html#sobre" class="text-gray-700 hover:text-cream-blue transition-colors font-medium">Sobre</a>
+                    <a href="index.html#contato" class="text-gray-700 hover:text-cream-blue transition-colors font-medium">Contato</a>
+                </nav>
+                
+                <!-- Menu Mobile Button -->
+                <button class="md:hidden text-cream-blue text-2xl" id="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Menu Mobile -->
+        <div class="menu-mobile fixed top-0 right-0 h-full w-64 bg-white shadow-xl md:hidden z-50" id="mobile-menu">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-8">
+                    <span class="text-xl font-bold text-cream-blue">Menu</span>
+                    <button id="menu-close" class="text-gray-500 text-xl">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <nav class="flex flex-col space-y-6">
+                    <a href="index.html" class="text-gray-700 hover:text-cream-blue transition-colors font-medium">Início</a>
+                    <a href="damasco.html" class="text-gray-700 hover:text-cream-blue transition-colors font-medium">🍑 Damasco</a>
+                    <a href="pimenta.html" class="text-gray-700 hover:text-cream-blue transition-colors font-medium">🌶️ Pimenta</a>
+                    <a href="alho.html" class="text-gray-700 hover:text-cream-blue transition-colors font-medium">🧄 Alho</a>
+                    <div class="border-l-4 border-pink-500 pl-4">
+                        <span class="text-pink-600 font-medium">🍓 Frutas Vermelhas</span>
+                    </div>
+                    <a href="index.html#sobre" class="text-gray-700 hover:text-cream-blue transition-colors font-medium">Sobre</a>
+                    <a href="index.html#contato" class="text-gray-700 hover:text-cream-blue transition-colors font-medium">Contato</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="frutas-gradient min-h-screen flex items-center justify-center relative overflow-hidden pt-20 splash-effect">
+        <!-- Elementos decorativos com efeito de frutas -->
+        <div class="absolute top-32 left-10 w-20 h-20 bg-white/20 rounded-full float-animation berry-bounce"></div>
+        <div class="absolute bottom-20 right-10 w-16 h-16 bg-white/15 rounded-full float-animation berry-bounce" style="animation-delay: 1s;"></div>
+        <div class="absolute top-1/2 left-5 w-12 h-12 bg-white/10 rounded-full float-animation sparkle" style="animation-delay: 2s;"></div>
+        <div class="absolute top-20 right-20 w-8 h-8 bg-white/25 rounded-full sparkle" style="animation-delay: 0.5s;"></div>
+        
+        <div class="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center relative z-10">
+            <div data-aos="fade-right" data-aos-duration="1000">
+                <div class="inline-block bg-white/20 rounded-full px-4 py-2 mb-6">
+                    <span class="text-white font-medium">🍓 Sabor Vibrante</span>
+                </div>
+                <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+                    Cream Cheese
+                    <span class="block text-yellow-200">Frutas Vermelhas</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed">
+                    Frescor vibrante e cremosidade única. A explosão de sabores 
+                    das frutas em perfeita harmonia
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <button class="bg-white text-pink-600 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 pulse-pink hover:scale-105">
+                        <i class="fas fa-gem mr-2"></i>
+                        Explosão de Sabor
+                    </button>
+                    <button class="border-2 border-white text-white hover:bg-white hover:text-pink-600 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300">
+                        <i class="fas fa-rainbow mr-2"></i>
+                        Frescor Natural
+                    </button>
+                </div>
+            </div>
+            
+            <div data-aos="fade-left" data-aos-duration="1000" class="relative">
+                <div class="relative z-10">
+                    <div class="w-80 h-80 mx-auto bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm">
+                        <div class="w-64 h-64 bg-white rounded-full flex items-center justify-center">
+                            <i class="fas fa-gem text-pink-500 text-8xl berry-bounce"></i>
+                        </div>
+                    </div>
+                </div>
+                <!-- Círculos decorativos */
+                <div class="absolute -top-8 -right-8 w-16 h-16 bg-yellow-300/30 rounded-full sparkle"></div>
+                <div class="absolute -bottom-8 -left-8 w-24 h-24 bg-pink-300/20 rounded-full sparkle" style="animation-delay: 1s;"></div>
+                <div class="absolute top-16 left-16 w-6 h-6 bg-red-300/40 rounded-full sparkle" style="animation-delay: 2s;"></div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Blend de Frutas -->
+    <section class="py-20 bg-cream-gray">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold text-cream-blue mb-6">
+                    Sinfonia de Frutas Vermelhas
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Uma seleção cuidadosa das melhores frutas vermelhas para criar um sabor único e equilibrado
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                <div class="bg-white rounded-2xl p-8 hover-lift transition-all duration-300" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-3xl">🍓</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-cream-blue mb-3">Morango</h3>
+                        <div class="text-sm text-pink-600 mb-2">40% do blend</div>
+                        <p class="text-gray-600 text-sm">
+                            Doçura natural e aroma inconfundível, base perfeita do nosso blend
+                        </p>
+                        <div class="mt-3 flex justify-center space-x-1">
+                            <span class="w-2 h-2 bg-red-400 rounded-full"></span>
+                            <span class="w-2 h-2 bg-red-500 rounded-full"></span>
+                            <span class="w-2 h-2 bg-red-600 rounded-full"></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-8 hover-lift transition-all duration-300" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-3xl">🫐</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-cream-blue mb-3">Mirtilo</h3>
+                        <div class="text-sm text-pink-600 mb-2">25% do blend</div>
+                        <p class="text-gray-600 text-sm">
+                            Sabor sofisticado e antioxidantes naturais para complexidade
+                        </p>
+                        <div class="mt-3 flex justify-center space-x-1">
+                            <span class="w-2 h-2 bg-purple-400 rounded-full"></span>
+                            <span class="w-2 h-2 bg-purple-500 rounded-full"></span>
+                            <span class="w-2 h-2 bg-purple-600 rounded-full"></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-8 hover-lift transition-all duration-300" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-3xl">🍒</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-cream-blue mb-3">Cereja</h3>
+                        <div class="text-sm text-pink-600 mb-2">20% do blend</div>
+                        <p class="text-gray-600 text-sm">
+                            Intensidade e profundidade, equilibra doçura com acidez
+                        </p>
+                        <div class="mt-3 flex justify-center space-x-1">
+                            <span class="w-2 h-2 bg-red-500 rounded-full"></span>
+                            <span class="w-2 h-2 bg-red-600 rounded-full"></span>
+                            <span class="w-2 h-2 bg-red-700 rounded-full"></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-8 hover-lift transition-all duration-300" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-3xl">🫐</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-cream-blue mb-3">Framboesa</h3>
+                        <div class="text-sm text-pink-600 mb-2">15% do blend</div>
+                        <p class="text-gray-600 text-sm">
+                            Toque final vibrante e aromático que desperta os sentidos
+                        </p>
+                        <div class="mt-3 flex justify-center space-x-1">
+                            <span class="w-2 h-2 bg-pink-400 rounded-full"></span>
+                            <span class="w-2 h-2 bg-pink-500 rounded-full"></span>
+                            <span class="w-2 h-2 bg-pink-600 rounded-full"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Perfil de sabor -->
+            <div class="bg-white rounded-3xl p-8" data-aos="fade-up">
+                <h3 class="text-2xl font-bold text-center text-cream-blue mb-8">
+                    Perfil de Sabor Único
+                </h3>
+                <div class="grid md:grid-cols-5 gap-6">
+                    <div class="text-center">
+                        <div class="relative w-20 h-20 mx-auto mb-4">
+                            <div class="absolute inset-0 bg-gradient-to-t from-pink-200 to-pink-500 rounded-full"></div>
+                            <div class="absolute inset-2 bg-white rounded-full flex items-center justify-center">
+                                <span class="text-lg font-bold text-pink-600">85%</span>
+                            </div>
+                        </div>
+                        <h4 class="font-bold text-cream-blue mb-1">Doçura</h4>
+                        <p class="text-gray-600 text-sm">Natural e equilibrada</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="relative w-20 h-20 mx-auto mb-4">
+                            <div class="absolute inset-0 bg-gradient-to-t from-red-200 to-red-500 rounded-full"></div>
+                            <div class="absolute inset-2 bg-white rounded-full flex items-center justify-center">
+                                <span class="text-lg font-bold text-red-600">70%</span>
+                            </div>
+                        </div>
+                        <h4 class="font-bold text-cream-blue mb-1">Acidez</h4>
+                        <p class="text-gray-600 text-sm">Frescor vibrante</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="relative w-20 h-20 mx-auto mb-4">
+                            <div class="absolute inset-0 bg-gradient-to-t from-purple-200 to-purple-500 rounded-full"></div>
+                            <div class="absolute inset-2 bg-white rounded-full flex items-center justify-center">
+                                <span class="text-lg font-bold text-purple-600">90%</span>
+                            </div>
+                        </div>
+                        <h4 class="font-bold text-cream-blue mb-1">Aroma</h4>
+                        <p class="text-gray-600 text-sm">Intenso e envolvente</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="relative w-20 h-20 mx-auto mb-4">
+                            <div class="absolute inset-0 bg-gradient-to-t from-blue-200 to-blue-500 rounded-full"></div>
+                            <div class="absolute inset-2 bg-white rounded-full flex items-center justify-center">
+                                <span class="text-lg font-bold text-blue-600">95%</span>
+                            </div>
+                        </div>
+                        <h4 class="font-bold text-cream-blue mb-1">Cremosidade</h4>
+                        <p class="text-gray-600 text-sm">Textura sedosa</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="relative w-20 h-20 mx-auto mb-4">
+                            <div class="absolute inset-0 bg-gradient-to-t from-green-200 to-green-500 rounded-full"></div>
+                            <div class="absolute inset-2 bg-white rounded-full flex items-center justify-center">
+                                <span class="text-lg font-bold text-green-600">80%</span>
+                            </div>
+                        </div>
+                        <h4 class="font-bold text-cream-blue mb-1">Frescor</h4>
+                        <p class="text-gray-600 text-sm">Sensação refrescante</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Informações do Produto -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div data-aos="fade-right">
+                    <h2 class="text-4xl font-bold text-cream-blue mb-6">
+                        A <span class="text-frutas-gradient">Explosão</span> de Sabores
+                    </h2>
+                    <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+                        Nosso cream cheese de frutas vermelhas é uma celebração dos sabores mais vibrantes 
+                        da natureza. Cada fruta é colhida no ponto perfeito de maturação e processada 
+                        imediatamente para preservar toda a frescura e intensidade aromática.
+                    </p>
+                    <p class="text-lg text-gray-700 mb-8 leading-relaxed">
+                        O resultado é uma sinfonia de sabores que dança no paladar: a doçura natural 
+                        do morango, a sofisticação do mirtilo, a intensidade da cereja e o frescor 
+                        vibrante da framboesa, tudo envolvido pela cremosidade artesanal incomparável.
+                    </p>
+                    
+                    <!-- Processo especial -->
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start">
+                            <i class="fas fa-snowflake text-pink-500 mr-3 mt-1"></i>
+                            <div>
+                                <span class="font-medium block">Congelamento Flash</span>
+                                <span class="text-gray-600 text-sm">Preserva nutrientes e sabores no pico da frescura</span>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-blender text-pink-500 mr-3 mt-1"></i>
+                            <div>
+                                <span class="font-medium block">Blend Artesanal</span>
+                                <span class="text-gray-600 text-sm">Mistura delicada que mantém pedacinhos das frutas</span>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-thermometer-empty text-pink-500 mr-3 mt-1"></i>
+                            <div>
+                                <span class="font-medium block">Processo a Frio</span>
+                                <span class="text-gray-600 text-sm">Técnica que preserva vitaminas e antioxidantes</span>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-gem text-pink-500 mr-3 mt-1"></i>
+                            <div>
+                                <span class="font-medium block">Cristalização Natural</span>
+                                <span class="text-gray-600 text-sm">Textura única com pequenos cristais de fruta</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tags do produto -->
+                    <div class="flex flex-wrap gap-3">
+                        <span class="bg-pink-100 text-pink-700 px-4 py-2 rounded-full text-sm font-medium">
+                            <i class="fas fa-magic mr-2"></i>Vibrante
+                        </span>
+                        <span class="bg-pink-100 text-pink-700 px-4 py-2 rounded-full text-sm font-medium">
+                            <i class="fas fa-rainbow mr-2"></i>Especial
+                        </span>
+                        <span class="bg-pink-100 text-pink-700 px-4 py-2 rounded-full text-sm font-medium">
+                            <i class="fas fa-heart mr-2"></i>Natural
+                        </span>
+                        <span class="bg-pink-100 text-pink-700 px-4 py-2 rounded-full text-sm font-medium">
+                            <i class="fas fa-star mr-2"></i>Premium
+                        </span>
+                    </div>
+                </div>
+                
+                <div data-aos="fade-left" class="relative">
+                    <div class="frutas-light-gradient rounded-3xl p-8">
+                        <h3 class="text-2xl font-bold text-cream-blue mb-6 text-center">
+                            Informações Nutricionais
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center py-3 border-b border-pink-200">
+                                <span class="font-medium">Porção (30g)</span>
+                                <span class="text-pink-600 font-bold">88 kcal</span>
+                            </div>
+                            <div class="flex justify-between items-center py-3 border-b border-pink-200">
+                                <span class="font-medium">Proteínas</span>
+                                <span class="text-pink-600 font-bold">3,0g</span>
+                            </div>
+                            <div class="flex justify-between items-center py-3 border-b border-pink-200">
+                                <span class="font-medium">Carboidratos</span>
+                                <span class="text-pink-600 font-bold">5,2g</span>
+                            </div>
+                            <div class="flex justify-between items-center py-3 border-b border-pink-200">
+                                <span class="font-medium">Gorduras Totais</span>
+                                <span class="text-pink-600 font-bold">6,8g</span>
+                            </div>
+                            <div class="flex justify-between items-center py-3 border-b border-pink-200">
+                                <span class="font-medium">Antocianinas</span>
+                                <span class="text-pink-600 font-bold">8mg</span>
+                            </div>
+                            <div class="flex justify-between items-center py-3">
+                                <span class="font-medium">Vitamina C</span>
+                                <span class="text-pink-600 font-bold">22mg</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Benefícios das frutas vermelhas -->
+                        <div class="mt-6 p-4 bg-pink-50 rounded-lg">
+                            <h4 class="font-bold text-pink-700 mb-2">🍓 Poder das Antocianinas:</h4>
+                            <ul class="text-sm text-pink-600 space-y-1">
+                                <li>• Potente ação antioxidante</li>
+                                <li>• Melhora a circulação sanguínea</li>
+                                <li>• Rica em vitamina C natural</li>
+                                <li>• Propriedades anti-inflamatórias</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Sazonalidade das Frutas -->
+    <section class="py-20 frutas-light-gradient">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold text-cream-blue mb-6">
+                    Colheita na Estação Perfeita
+                </h2>
+                <p class="text-xl text-gray-700 max-w-3xl mx-auto">
+                    Respeitamos os ciclos naturais para garantir o máximo de sabor e qualidade
+                </p>
+            </div>
+            
+            <!-- Timeline das colheitas -->
+            <div class="max-w-6xl mx-auto">
+                <div class="grid md:grid-cols-4 gap-8">
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-24 h-24 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-sun text-yellow-500 text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-cream-blue mb-3">Verão</h3>
+                        <div class="space-y-2 text-sm">
+                            <div class="bg-white rounded-lg p-2">
+                                <span class="text-2xl">🍓</span>
+                                <div class="font-medium">Morango</div>
+                                <div class="text-gray-600">Pico de doçura</div>
+                            </div>
+                            <div class="bg-white rounded-lg p-2">
+                                <span class="text-2xl">🍒</span>
+                                <div class="font-medium">Cereja</div>
+                                <div class="text-gray-600">Sabor intenso</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-24 h-24 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-leaf text-orange-500 text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-cream-blue mb-3">Outono</h3>
+                        <div class="space-y-2 text-sm">
+                            <div class="bg-white rounded-lg p-2">
+                                <span class="text-2xl">🫐</span>
+                                <div class="font-medium">Mirtilo</div>
+                                <div class="text-gray-600">Rica em antioxidantes</div>
+                            </div>
+                            <div class="bg-white rounded-lg p-2">
+                                <span class="text-2xl">🫐</span>
+                                <div class="font-medium">Framboesa</div>
+                                <div class="text-gray-600">Aroma máximo</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                        <div class="w-24 h-24 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-snowflake text-blue-500 text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-cream-blue mb-3">Inverno</h3>
+                        <div class="space-y-2 text-sm">
+                            <div class="bg-white rounded-lg p-2">
+                                <span class="text-2xl">🧊</span>
+                                <div class="font-medium">Congelamento</div>
+                                <div class="text-gray-600">Preservação ideal</div>
+                            </div>
+                            <div class="bg-white rounded-lg p-2">
+                                <span class="text-2xl">🏭</span>
+                                <div class="font-medium">Produção</div>
+                                <div class="text-gray-600">Blend artesanal</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="400">
+                        <div class="w-24 h-24 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-seedling text-green-500 text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-cream-blue mb-3">Primavera</h3>
+                        <div class="space-y-2 text-sm">
+                            <div class="bg-white rounded-lg p-2">
+                                <span class="text-2xl">🌱</span>
+                                <div class="font-medium">Plantio</div>
+                                <div class="text-gray-600">Novas mudas</div>
+                            </div>
+                            <div class="bg-white rounded-lg p-2">
+                                <span class="text-2xl">🧄</span>
+                                <div class="font-medium">Lançamento</div>
+                                <div class="text-gray-600">Produto fresco</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Compromisso com sustentabilidade -->
+            <div class="mt-16 bg-white rounded-3xl p-8" data-aos="fade-up">
+                <h3 class="text-2xl font-bold text-center text-cream-blue mb-8">
+                    Nosso Compromisso Sustentável
+                </h3>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-handshake text-green-500 text-2xl"></i>
+                        </div>
+                        <h4 class="font-bold text-cream-blue mb-2">Parcerias Locais</h4>
+                        <p class="text-gray-600 text-sm">
+                            Trabalhamos diretamente com produtores locais, garantindo fair trade e qualidade
+                        </p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-recycle text-blue-500 text-2xl"></i>
+                        </div>
+                        <h4 class="font-bold text-cream-blue mb-2">Zero Desperdício</h4>
+                        <p class="text-gray-600 text-sm">
+                            Aproveitamos 100% das frutas, transformando "imperfeitas" em nossos blends
+                        </p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-seedling text-purple-500 text-2xl"></i>
+                        </div>
+                        <h4 class="font-bold text-cream-blue mb-2">Cultivo Orgânico</h4>
+                        <p class="text-gray-600 text-sm">
+                            Priorizamos frutas de cultivo orgânico, livre de pesticidas e agrotóxicos
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Experiências Gourmet -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold text-cream-blue mb-6">
+                    Experiências Gourmet
+                </h2>
+                <p class="text-xl text-gray-700 max-w-3xl mx-auto">
+                    Inspire-se com criações únicas que transformam momentos especiais em memórias inesquecíveis
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gradient-to-br from-pink-50 to-rose-50 rounded-2xl p-8 hover-lift transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-birthday-cake text-pink-500 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-cream-blue">Cheesecakes Especiais</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Base cremosa para cheesecakes únicos que impressionam pela textura e sabor
+                    </p>
+                    <div class="text-sm text-pink-600">
+                        <i class="fas fa-star mr-1"></i> Receita exclusiva inclusa
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-br from-purple-50 to-violet-50 rounded-2xl p-8 hover-lift transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-ice-cream text-purple-500 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-cream-blue">Sobremesas Geladas</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Perfeito para sorvetes artesanais, semifreddos e mousses refrescantes
+                    </p>
+                    <div class="text-sm text-pink-600">
+                        <i class="fas fa-snowflake mr-1"></i> Textura que não cristaliza
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-br from-red-50 to-pink-50 rounded-2xl p-8 hover-lift transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-cocktail text-red-500 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-cream-blue">Drinks Gourmet</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Ingrediente especial para smoothies, milkshakes e coquetéis exclusivos
+                    </p>
+                    <div class="text-sm text-pink-600">
+                        <i class="fas fa-magic mr-1"></i> Transforma drinks comuns
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-br from-orange-50 to-red-50 rounded-2xl p-8 hover-lift transition-all duration-300" data-aos="fade-up" data-aos-delay="400">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-bread-slice text-orange-500 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-cream-blue">Café da Manhã Premium</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Eleva torradas, panquecas e waffles a um nível gastronômico superior
+                    </p>
+                    <div class="text-sm text-pink-600">
+                        <i class="fas fa-sun mr-1"></i> Energia vibrante para o dia
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-br from-yellow-50 to-orange-50 rounded-2xl p-8 hover-lift transition-all duration-300" data-aos="fade-up" data-aos-delay="500">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-gift text-yellow-500 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-cream-blue">Ocasiões Especiais</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Ideal para aniversários, celebrações e momentos que merecem algo único
+                    </p>
+                    <div class="text-sm text-pink-600">
+                        <i class="fas fa-heart mr-1"></i> Cria memórias especiais
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-8 hover-lift transition-all duration-300" data-aos="fade-up" data-aos-delay="600">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-apple-alt text-green-500 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-cream-blue">Combinações Saudáveis</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Acompanha frutas frescas, granola e cereais para lanches nutritivos
+                    </p>
+                    <div class="text-sm text-pink-600">
+                        <i class="fas fa-leaf mr-1"></i> Prazer sem culpa
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA de Compra -->
+    <section class="py-20 bg-cream-blue relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-pink-400/20 to-purple-400/20"></div>
+        <div class="absolute inset-0 frutas-shimmer"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center max-w-4xl mx-auto" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                    Explosão de Sabores Esperando Por Você
+                </h2>
+                <p class="text-xl text-white/90 mb-8 leading-relaxed">
+                    Desperte seus sentidos com a sinfonia perfeita de frutas vermelhas. 
+                    Cada colherada é uma viagem sensorial que combina frescor natural, 
+                    cremosidade artesanal e a magia das melhores frutas da estação.
+                </p>
+                
+                <!-- Oferta especial -->
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mb-8 inline-block">
+                    <div class="text-yellow-300 font-bold text-lg mb-2">🍓 Edição Especial</div>
+                    <div class="text-white text-3xl font-bold mb-2">
+                        <span class="line-through text-white/60 text-xl">R$ 36,90</span>
+                        <span class="ml-2">R$ 31,90</span>
+                    </div>
+                    <div class="text-white/80">Frescor premium com desconto exclusivo</div>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button class="bg-white text-pink-600 px-10 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105 pulse-pink">
+                        <i class="fas fa-gem mr-2"></i>
+                        Sabor Vibrante - R$ 31,90
+                    </button>
+                    <button class="border-2 border-white text-white hover:bg-white hover:text-cream-blue px-10 py-4 rounded-full font-semibold text-lg transition-all duration-300">
+                        <i class="fas fa-whatsapp mr-2"></i>
+                        WhatsApp
+                    </button>
+                </div>
+                
+                <!-- Garantias -->
+                <div class="flex flex-wrap justify-center gap-8 mt-12 text-white/80">
+                    <div class="flex items-center">
+                        <i class="fas fa-gem mr-2 text-yellow-300"></i>
+                        <span>Explosão de Sabor</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-snowflake mr-2 text-yellow-300"></i>
+                        <span>Frescor Garantido</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-heart mr-2 text-yellow-300"></i>
+                        <span>100% Natural</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-rainbow mr-2 text-yellow-300"></i>
+                        <span>Vibrante Único</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Produtos Relacionados -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold text-cream-blue mb-6">
+                    Complete Sua Coleção
+                </h2>
+                <p class="text-xl text-gray-600">
+                    Descubra todos os sabores únicos da nossa linha artesanal
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <a href="damasco.html" class="group">
+                    <div class="bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl p-8 hover-lift transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                        <div class="text-center">
+                            <div class="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                                <i class="fas fa-seedling text-orange-500 text-3xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-cream-blue mb-3">🍑 Damasco</h3>
+                            <p class="text-gray-600 mb-4">Doçura mediterrânea em cada colherada</p>
+                            <span class="text-orange-600 font-medium group-hover:underline">Ver produto →</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="pimenta.html" class="group">
+                    <div class="bg-gradient-to-br from-red-50 to-red-100 rounded-2xl p-8 hover-lift transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                        <div class="text-center">
+                            <div class="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                                <i class="fas fa-fire text-red-500 text-3xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-cream-blue mb-3">🌶️ Pimenta</h3>
+                            <p class="text-gray-600 mb-4">Intensidade que desperta os sentidos</p>
+                            <span class="text-red-600 font-medium group-hover:underline">Ver produto →</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="alho.html" class="group">
+                    <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-8 hover-lift transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+                        <div class="text-center">
+                            <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                                <i class="fas fa-spa text-green-500 text-3xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-cream-blue mb-3">🧄 Alho</h3>
+                            <p class="text-gray-600 mb-4">Tradição aromática que conquista</p>
+                            <span class="text-green-600 font-medium group-hover:underline">Ver produto →</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <a href="index.html" class="flex items-center space-x-2 mb-4 md:mb-0">
+                    <div class="w-8 h-8 bg-cream-yellow rounded-full flex items-center justify-center">
+                        <i class="fas fa-cheese text-white"></i>
+                    </div>
+                    <span class="text-xl font-bold">Cream UP</span>
+                </a>
+                
+                <div class="text-center md:text-right">
+                    <p class="text-gray-400 mb-2">
+                        © 2025 Cream UP. Todos os direitos reservados.
+                    </p>
+                    <p class="text-gray-500 text-sm">
+                        🍓 Frutas Vermelhas • Frescor vibrante • Feito com ❤️
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 w-12 h-12 bg-pink-500 hover:bg-pink-600 text-white rounded-full shadow-lg opacity-0 invisible transition-all duration-300 z-40">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+    
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Inicializar AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+        
+        // Elementos do DOM
+        const menuToggle = document.getElementById('menu-toggle');
+        const menuClose = document.getElementById('menu-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const backToTop = document.getElementById('back-to-top');
+        
+        // Menu mobile toggle
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+        });
+        
+        menuClose.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+        });
+        
+        // Fechar menu mobile ao clicar fora
+        document.addEventListener('click', (e) => {
+            if (!mobileMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+                mobileMenu.classList.remove('active');
+            }
+        });
+        
+        // Scroll effects
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            
+            // Back to top button
+            if (scrolled > 500) {
+                backToTop.classList.remove('opacity-0', 'invisible');
+                backToTop.classList.add('opacity-100', 'visible');
+            } else {
+                backToTop.classList.add('opacity-0', 'invisible');
+                backToTop.classList.remove('opacity-100', 'visible');
+            }
+        });
+        
+        // Back to top functionality
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Navegação suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Efeito de partículas coloridas (frutas)
+        const createBerryParticle = () => {
+            const colors = ['#EC4899', '#F43F5E', '#EF4444', '#DC2626'];
+            const particle = document.createElement('div');
+            particle.className = 'fixed w-3 h-3 opacity-30 rounded-full pointer-events-none z-0';
+            particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            particle.style.left = Math.random() * 100 + 'vw';
+            particle.style.top = '100vh';
+            document.body.appendChild(particle);
+            
+            const animation = particle.animate([
+                { transform: 'translateY(0px) scale(1) rotate(0deg)', opacity: 0.3 },
+                { transform: 'translateY(-120vh) scale(0.5) rotate(360deg)', opacity: 0 }
+            ], {
+                duration: 3000 + Math.random() * 2000,
+                easing: 'ease-out'
+            });
+            
+            animation.onfinish = () => particle.remove();
+        };
+        
+        // Criar partículas de frutas ocasionalmente
+        setInterval(createBerryParticle, 1500);
+        
+        // Efeito de brilho no scroll
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const sparkles = document.querySelectorAll('.sparkle');
+            sparkles.forEach((sparkle, index) => {
+                const speed = (index + 1) * 0.1;
+                sparkle.style.transform = `rotate(${scrolled * speed}deg)`;
+            });
+        });
+        
+        // Console welcome
+        console.log('%c🍓 Vibrante sabor do Cream UP Frutas Vermelhas! 🍓', 'color: #EC4899; font-size: 20px; font-weight: bold;');
+    </script>
+</body>
+</html>

@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cream Cheese Alho - Tradição aromática que conquista. Artesanal, clássico e premium.">
+    <title>Cream UP - Alho | Tradição Aromática</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+        
+        /* Cores customizadas da marca */
+        .bg-cream-blue { background-color: #235784; }
+        .bg-cream-light { background-color: #40A8C4; }
+        .bg-cream-yellow { background-color: #F7AA00; }
+        .bg-cream-gray { background-color: #EEF6F7; }
+        .text-cream-blue { color: #235784; }
+        .text-cream-light { color: #40A8C4; }
+        .text-cream-yellow { color: #F7AA00; }
+        .border-cream-yellow { border-color: #F7AA00; }
+        
+        /* Gradiente específico do alho */
+        .alho-gradient { 
+            background: linear-gradient(135deg, #16A34A 0%, #22C55E 50%, #4ADE80 100%); 
+        }
+        .alho-light-gradient {
+            background: linear-gradient(145deg, #F0FDF4 0%, #DCFCE7 100%);
+        }
+        
+        /* Animações */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+        .float-animation { animation: float 4s ease-in-out infinite; }
+        
+        @keyframes pulse-green {
+            0%, 100% { box-shadow: 0 0 20px rgba(34, 197, 94, 0.3); }
+            50% { box-shadow: 0 0 30px rgba(34, 197, 94, 0.6); }
+        }
+        .pulse-green { animation: pulse-green 2s ease-in-out infinite; }
+        
+        @keyframes aroma-wave {
+            0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.3; }
+            50% { transform: scale(1.2) rotate(5deg); opacity: 0.6; }
+        }
+        .aroma-wave { animation: aroma-wave 3s ease-in-out infinite; }
+        
+        .hover-lift:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        html { scroll-behavior: smooth; }
+        
+        .menu-mobile {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        .menu-mobile.active {
+            transform: translateX(0);
+        }
+        
+        /* Gradiente texto */
+        .text-alho-gradient {
+            background: linear-gradient(135deg, #16A34A, #22C55E);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Efeito de aroma */
+        .aroma-effect {
+            position: relative;
+            overflow: hidden;
+        }
+        .aroma-effect::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, rgba(34, 197, 94, 0.1), transparent);
+            animation: aroma-rotate 10s linear infinite;
+        }
+        @keyframes aroma-rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+    <!-- Header -->
+    <header class="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-lg z-50 transition-all duration-300">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-cream-yellow rounded-full flex items-center justify-center">
+                        <i class="fas fa-cheese text-white text-xl"></i>
+                    </div>
+                    <span class="text-2xl font-bold text-cream-blue">Cream UP</span>
+                </a>
+                
+                <!-- Menu Desktop -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-cream-blue transition-colors font-medium">Início</a>
+                    <div class="relative group">
+                        <a href="index.html#produtos" class="text-cream-blue font-medium cursor-pointer">Produtos</a>
+                        <div class="absolute top-full left-0 mt-2 w-48 bg-white shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                            <a href="damasco.html" class="block px-4 py-3 text-gray-700 hover:text-orange-600 transition-colors">🍑 Damasco</a>
+                            <a href="pimenta.html" class="block px-4 py-3 text-gray-700 hover:text-red-600 transition-colors">🌶️ Pimenta</a>
+                            <a href="alho.html" class="block px-4 py-3 text-green-600 font-medium border-l-4 border-green-500">🧄 Alho</a>
+                            <a href="frutas-vermelhas.html" class="block px-4 py-3 text-gray-700 hover:text-pink-600 transition-colors">🍓 Frutas Vermelhas</a>
+                        </div>
+                    </div>
+                    <a href="index.html#sobre" class="text-gray-700 hover:text-cream-blue transition-colors font-medium">Sobre</a>
+                    <a href="index.html#contato" class="text-gray-700 hover:text-cream-blue transition-colors font-medium">Contato</a>
+                </nav>
+                
+                <!-- Menu Mobile Button -->
+                <button class="md:hidden text-cream-blue text-2xl" id="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Menu Mobile -->
+        <div class="menu-mobile fixed top-0 right-0 h-full w-64 bg-white shadow-xl md:hidden z-50" id="mobile-menu">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-8">
+                    <span class="text-xl font-bold text-cream-blue">Menu</span>
+                    <button id="menu-close" class="text-gray-500 text-xl">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <nav class="flex flex-col space-y-6">
+                    <a href="index.html" class="text-gray-700 hover:text-cream-blue transition-colors font-medium">Início</a>
+                    <a href="damasco.html" class="text-gray-700 hover:text-cream-blue transition-colors font-medium">🍑 Damasco</a>
+                    <a href="pimenta.html" class="text-gray-700 hover:text-cream-blue transition-colors font-medium">🌶️ Pimenta</a>
+                    <div class="border-l-4 border-green-500 pl-4">
+                        <span class="text-green-600 font-medium">🧄 Alho</span>
+                    </div>
+                    <a href="frutas-vermelhas.html" class="text-gray-700 hover:text-cream-blue transition-colors font-medium">🍓 Frutas Vermelhas</a>
+                    <a href="index.html#sobre" class="text-gray-700 hover:text-cream-blue transition-colors font-medium">Sobre</a>
+                    <a href="index.html#contato" class="text-gray-700 hover:text-cream-blue transition-colors font-medium">Contato</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="alho-gradient min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+        <!-- Elementos decorativos com efeito aromático -->
+        <div class="absolute top-32 left-10 w-20 h-20 bg-white/20 rounded-full float-animation aroma-wave"></div>
+        <div class="absolute bottom-20 right-10 w-16 h-16 bg-white/15 rounded-full float-animation aroma-wave" style="animation-delay: 1s;"></div>
+        <div class="absolute top-1/2 left-5 w-12 h-12 bg-white/10 rounded-full float-animation aroma-wave" style="animation-delay: 2s;"></div>
+        
+        <div class="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center relative z-10">
+            <div data-aos="fade-right" data-aos-duration="1000">
+                <div class="inline-block bg-white/20 rounded-full px-4 py-2 mb-6">
+                    <span class="text-white font-medium">🧄 Sabor Clássico</span>
+                </div>
+                <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+                    Cream Cheese
+                    <span class="block text-yellow-200">Alho</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed">
+                    Tradição aromática que conquista. O sabor clássico 
+                    reinventado com sofisticação e cremosidade
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <button class="bg-white text-green-600 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 pulse-green hover:scale-105">
+                        <i class="fas fa-crown mr-2"></i>
+                        Sabor Clássico
+                    </button>
+                    <button class="border-2 border-white text-white hover:bg-white hover:text-green-600 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300">
+                        <i class="fas fa-spa mr-2"></i>
+                        Aroma Único
+                    </button>
+                </div>
+            </div>
+            
+            <div data-aos="fade-left" data-aos-duration="1000" class="relative">
+                <div class="relative z-10 aroma-effect">
+                    <div class="w-80 h-80 mx-auto bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm">
+                        <div class="w-64 h-64 bg-white rounded-full flex items-center justify-center">
+                            <i class="fas fa-spa text-green-500 text-8xl"></i>
+                        </div>
+                    </div>
+                </div>
+                <!-- Círculos decorativos -->
+                <div class="absolute -top-8 -right-8 w-16 h-16 bg-yellow-300/30 rounded-full aroma-wave"></div>
+                <div class="absolute -bottom-8 -left-8 w-24 h-24 bg-green-300/20 rounded-full aroma-wave" style="animation-delay: 1.5s;"></div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Tradição e História -->
+    <section class="py-20 bg-cream-gray">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold text-cream-blue mb-6">
+                    Uma Tradição Milenar
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    O alho, conhecido como o "ouro branco" da culinária, encontra sua expressão mais refinada em nosso cream cheese artesanal
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-history text-green-500 text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-cream-blue mb-4">5000 Anos</h3>
+                    <p class="text-gray-600">
+                        De história culinária, desde antigas civilizações até nossa mesa
+                    </p>
+                </div>
+                
+                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-globe-americas text-green-500 text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-cream-blue mb-4">Universalmente</h3>
+                    <p class="text-gray-600">
+                        Amado em todas as culinárias do mundo por seu sabor marcante
+                    </p>
+                </div>
+                
+                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-award text-green-500 text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-cream-blue mb-4">Reimaginado</h3>
+                    <p class="text-gray-600">
+                        Em nossa versão artesanal premium com cremosidade incomparável
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Timeline da tradição -->
+            <div class="max-w-4xl mx-auto">
+                <div class="relative">
+                    <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-green-300"></div>
+                    
+                    <div class="space-y-12">
+                        <div class="flex items-center relative" data-aos="fade-right">
+                            <div class="w-1/2 pr-8 text-right">
+                                <h4 class="text-xl font-bold text-cream-blue mb-2">Antigo Egito</h4>
+                                <p class="text-gray-600">Alho usado como moeda e oferenda aos deuses</p>
+                            </div>
+                            <div class="absolute left-1/2 transform -translate-x-1/2 w-8 h-8 bg-green-500 rounded-full border-4 border-white"></div>
+                            <div class="w-1/2 pl-8"></div>
+                        </div>
+                        
+                        <div class="flex items-center relative" data-aos="fade-left">
+                            <div class="w-1/2 pr-8"></div>
+                            <div class="absolute left-1/2 transform -translate-x-1/2 w-8 h-8 bg-green-500 rounded-full border-4 border-white"></div>
+                            <div class="w-1/2 pl-8">
+                                <h4 class="text-xl font-bold text-cream-blue mb-2">Mediterrâneo</h4>
+                                <p class="text-gray-600">Base fundamental da culinária mediterrânea</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center relative" data-aos="fade-right">
+                            <div class="w-1/2 pr-8 text-right">
+                                <h4 class="text-xl font-bold text-cream-blue mb-2">Brasil Colonial</h4>
+                                <p class="text-gray-600">Chegada e adaptação à culinária brasileira</p>
+                            </div>
+                            <div class="absolute left-1/2 transform -translate-x-1/2 w-8 h-8 bg-green-500 rounded-full border-4 border-white"></div>
+                            <div class="w-1/2 pl-8"></div>
+                        </div>
+                        
+                        <div class="flex items-center relative" data-aos="fade-left">
+                            <div class="w-1/2 pr-8"></div>
+                            <div class="absolute left-1/2 transform -translate-x-1/2 w-8 h-8 bg-cream-yellow rounded-full border-4 border-white"></div>
+                            <div class="w-1/2 pl-8">
+                                <h4 class="text-xl font-bold text-cream-blue mb-2">Cream UP 2025</h4>
+                                <p class="text-gray-600">Revolução cremosa: tradição encontra inovação</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Informações do Produto -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div data-aos="fade-right">
+                    <h2 class="text-4xl font-bold text-cream-blue mb-6">
+                        O <span class="text-alho-gradient">Clássico</span> Reinventado
+                    </h2>
+                    <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+                        Nosso cream cheese de alho é uma celebração da tradição culinária. Utilizamos apenas 
+                        alhos frescos e aromáticos, cuidadosamente processados para preservar todos os 
+                        compostos responsáveis pelo sabor marcante e benefícios únicos.
+                    </p>
+                    <p class="text-lg text-gray-700 mb-8 leading-relaxed">
+                        A cremosidade artesanal do nosso cream cheese se une harmoniosamente ao perfil 
+                        aromático complexo do alho, criando uma experiência gastronômica que honra a 
+                        tradição enquanto surpreende o paladar moderno com sua sofisticação.
+                    </p>
+                    
+                    <!-- Processo de produção -->
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start">
+                            <i class="fas fa-seedling text-green-500 mr-3 mt-1"></i>
+                            <div>
+                                <span class="font-medium block">Seleção Premium</span>
+                                <span class="text-gray-600 text-sm">Apenas bulbos frescos e aromáticos</span>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-cogs text-green-500 mr-3 mt-1"></i>
+                            <div>
+                                <span class="font-medium block">Processamento Artesanal</span>
+                                <span class="text-gray-600 text-sm">Técnicas que preservam aromas e nutrientes</span>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-clock text-green-500 mr-3 mt-1"></i>
+                            <div>
+                                <span class="font-medium block">Maturação Controlada</span>
+                                <span class="text-gray-600 text-sm">Tempo ideal para desenvolver complexidade</span>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mr-3 mt-1"></i>
+                            <div>
+                                <span class="font-medium block">Controle de Qualidade</span>
+                                <span class="text-gray-600 text-sm">Cada lote testado para perfeição</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tags do produto -->
+                    <div class="flex flex-wrap gap-3">
+                        <span class="bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-medium">
+                            <i class="fas fa-crown mr-2"></i>Clássico
+                        </span>
+                        <span class="bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-medium">
+                            <i class="fas fa-star mr-2"></i>Premium
+                        </span>
+                        <span class="bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-medium">
+                            <i class="fas fa-spa mr-2"></i>Aromático
+                        </span>
+                        <span class="bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-medium">
+                            <i class="fas fa-shield-alt mr-2"></i>Natural
+                        </span>
+                    </div>
+                </div>
+                
+                <div data-aos="fade-left" class="relative">
+                    <div class="alho-light-gradient rounded-3xl p-8">
+                        <h3 class="text-2xl font-bold text-cream-blue mb-6 text-center">
+                            Informações Nutricionais
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center py-3 border-b border-green-200">
+                                <span class="font-medium">Porção (30g)</span>
+                                <span class="text-green-600 font-bold">82 kcal</span>
+                            </div>
+                            <div class="flex justify-between items-center py-3 border-b border-green-200">
+                                <span class="font-medium">Proteínas</span>
+                                <span class="text-green-600 font-bold">3,8g</span>
+                            </div>
+                            <div class="flex justify-between items-center py-3 border-b border-green-200">
+                                <span class="font-medium">Carboidratos</span>
+                                <span class="text-green-600 font-bold">3,2g</span>
+                            </div>
+                            <div class="flex justify-between items-center py-3 border-b border-green-200">
+                                <span class="font-medium">Gorduras Totais</span>
+                                <span class="text-green-600 font-bold">6,9g</span>
+                            </div>
+                            <div class="flex justify-between items-center py-3 border-b border-green-200">
+                                <span class="font-medium">Alicina</span>
+                                <span class="text-green-600 font-bold">2,5mg</span>
+                            </div>
+                            <div class="flex justify-between items-center py-3">
+                                <span class="font-medium">Selênio</span>
+                                <span class="text-green-600 font-bold">14mcg</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Benefícios do alho -->
+                        <div class="mt-6 p-4 bg-green-50 rounded-lg">
+                            <h4 class="font-bold text-green-700 mb-2">🧄 Benefícios da Alicina:</h4>
+                            <ul class="text-sm text-green-600 space-y-1">
+                                <li>• Propriedades antioxidantes</li>
+                                <li>• Fortalece o sistema imunológico</li>
+                                <li>• Ação anti-inflamatória natural</li>
+                                <li>• Rico em compostos sulfurados</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Tipos de Alho e Origem -->
+    <section class="py-20 alho-light-gradient">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold text-cream-blue mb-6">
+                    Variedades Selecionadas
+                </h2>
+                <p class="text-xl text-gray-700 max-w-3xl mx-auto">
+                    Combinamos diferentes variedades de alho para criar um perfil de sabor único e complexo
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl p-8 hover-lift transition-all duration-300" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-3xl">🧄</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-cream-blue mb-3">Alho Roxo Nacional</h3>
+                        <div class="text-sm text-green-600 mb-2">🇧🇷 Minas Gerais</div>
+                        <p class="text-gray-600 text-sm mb-4">
+                            Sabor marcante e aroma intenso, tradicionalmente cultivado em terras mineiras
+                        </p>
+                        <div class="flex justify-center space-x-2">
+                            <span class="bg-green-100 text-green-700 px-2 py-1 rounded text-xs">Intenso</span>
+                            <span class="bg-green-100 text-green-700 px-2 py-1 rounded text-xs">Nacional</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-8 hover-lift transition-all duration-300" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-3xl">🧄</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-cream-blue mb-3">Alho Francês</h3>
+                        <div class="text-sm text-green-600 mb-2">🇫🇷 Provence</div>
+                        <p class="text-gray-600 text-sm mb-4">
+                            Perfil aromático sofisticado com notas sutis e elegantes
+                        </p>
+                        <div class="flex justify-center space-x-2">
+                            <span class="bg-purple-100 text-purple-700 px-2 py-1 rounded text-xs">Elegante</span>
+                            <span class="bg-purple-100 text-purple-700 px-2 py-1 rounded text-xs">Importado</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-8 hover-lift transition-all duration-300" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-3xl">🧄</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-cream-blue mb-3">Alho Orgânico</h3>
+                        <div class="text-sm text-green-600 mb-2">🌱 Cultivo Sustentável</div>
+                        <p class="text-gray-600 text-sm mb-4">
+                            Pureza absoluta, livre de pesticidas e cultivado naturalmente
+                        </p>
+                        <div class="flex justify-center space-x-2">
+                            <span class="bg-yellow-100 text-yellow-700 px-2 py-1 rounded text-xs">Orgânico</span>
+                            <span class="bg-yellow-100 text-yellow-700 px-2 py-1 rounded text-xs">Puro</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Processo de blend -->
+            <div class="mt-16 bg-white rounded-3xl p-8" data-aos="fade-up">
+                <h3 class="text-2xl font-bold text-center text-cream-blue mb-8">
+                    Nosso Processo de Blend Exclusivo
+                </h3>
+                <div class="grid md:grid-cols-4 gap-6">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-2xl">40%</span>
+                        </div>
+                        <h4 class="font-bold text-cream-blue mb-2">Alho Roxo Nacional</h4>
+                        <p class="text-gray-600 text-sm">Base intensa e marcante</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-2xl">30%</span>
+                        </div>
+                        <h4 class="font-bold text-cream-blue mb-2">Alho Francês</h4>
+                        <p class="text-gray-600 text-sm">Elegância e complexidade</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-2xl">25%</span>
+                        </div>
+                        <h4 class="font-bold text-cream-blue mb-2">Alho Orgânico</h4>
+                        <p class="text-gray-600 text-sm">Pureza e naturalidade</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-2xl">5%</span>
+                        </div>
+                        <h4 class="font-bold text-cream-blue mb-2">Ervas Finas</h4>
+                        <p class="text-gray-600 text-sm">Toque final aromático</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Usos Culinários -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold text-cream-blue mb-6">
+                    Versatilidade Culinária
+                </h2>
+                <p class="text-xl text-gray-700 max-w-3xl mx-auto">
+                    Um ingrediente versátil que transforma pratos simples em experiências gastronômicas memoráveis
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-8 hover-lift transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-bread-slice text-green-500 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-cream-blue">Pães e Torradas</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        O companheiro perfeito para pães artesanais, torradas e bruschetas gourmet
+                    </p>
+                    <div class="text-sm text-green-600">
+                        <i class="fas fa-star mr-1"></i> Clássico atemporal
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-8 hover-lift transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-fish text-blue-500 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-cream-blue">Peixes e Frutos do Mar</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Realça sabores marinhos com sua intensidade equilibrada e cremosidade
+                    </p>
+                    <div class="text-sm text-green-600">
+                        <i class="fas fa-water mr-1"></i> Harmonia perfeita
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-br from-yellow-50 to-amber-50 rounded-2xl p-8 hover-lift transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-drumstick-bite text-yellow-500 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-cream-blue">Carnes Assadas</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Complemento ideal para carnes vermelhas, aves e pratos assados
+                    </p>
+                    <div class="text-sm text-green-600">
+                        <i class="fas fa-fire mr-1"></i> Intensifica sabores
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-br from-red-50 to-rose-50 rounded-2xl p-8 hover-lift transition-all duration-300" data-aos="fade-up" data-aos-delay="400">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-pepper-hot text-red-500 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-cream-blue">Molhos e Condimentos</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Base cremosa para molhos especiais, marinadas e temperos gourmet
+                    </p>
+                    <div class="text-sm text-green-600">
+                        <i class="fas fa-palette mr-1"></i> Criatividade culinária
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-br from-purple-50 to-violet-50 rounded-2xl p-8 hover-lift transition-all duration-300" data-aos="fade-up" data-aos-delay="500">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-seedling text-purple-500 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-cream-blue">Vegetais e Saladas</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Transforma vegetais simples em pratos sofisticados e saborosos
+                    </p>
+                    <div class="text-sm text-green-600">
+                        <i class="fas fa-leaf mr-1"></i> Saudável e saboroso
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-br from-orange-50 to-amber-50 rounded-2xl p-8 hover-lift transition-all duration-300" data-aos="fade-up" data-aos-delay="600">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-birthday-cake text-orange-500 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-cream-blue">Pratos Especiais</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Ingrediente secreto para risotos, lasanhas e pratos de ocasiões especiais
+                    </p>
+                    <div class="text-sm text-green-600">
+                        <i class="fas fa-gem mr-1"></i> Toque especial
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA de Compra -->
+    <section class="py-20 bg-cream-blue relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-green-400/20 to-emerald-400/20"></div>
+        <div class="absolute inset-0 aroma-effect"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center max-w-4xl mx-auto" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                    Tradição que Conquista
+                </h2>
+                <p class="text-xl text-white/90 mb-8 leading-relaxed">
+                    Desperte seus sentidos com o aroma inconfundível e a cremosidade perfeita. 
+                    Nosso cream cheese de alho é a escolha dos que apreciam o sabor clássico 
+                    reinventado com sofisticação artesanal.
+                </p>
+                
+                <!-- Oferta especial -->
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mb-8 inline-block">
+                    <div class="text-yellow-300 font-bold text-lg mb-2">👑 Sabor Clássico</div>
+                    <div class="text-white text-3xl font-bold mb-2">
+                        <span class="line-through text-white/60 text-xl">R$ 31,90</span>
+                        <span class="ml-2">R$ 26,90</span>
+                    </div>
+                    <div class="text-white/80">Tradição com desconto especial</div>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button class="bg-white text-green-600 px-10 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105 pulse-green">
+                        <i class="fas fa-crown mr-2"></i>
+                        Tradição Premium - R$ 26,90
+                    </button>
+                    <button class="border-2 border-white text-white hover:bg-white hover:text-cream-blue px-10 py-4 rounded-full font-semibold text-lg transition-all duration-300">
+                        <i class="fas fa-whatsapp mr-2"></i>
+                        WhatsApp
+                    </button>
+                </div>
+                
+                <!-- Garantias -->
+                <div class="flex flex-wrap justify-center gap-8 mt-12 text-white/80">
+                    <div class="flex items-center">
+                        <i class="fas fa-spa mr-2 text-yellow-300"></i>
+                        <span>Aroma Autêntico</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-crown mr-2 text-yellow-300"></i>
+                        <span>Qualidade Premium</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-leaf mr-2 text-yellow-300"></i>
+                        <span>100% Natural</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-heart mr-2 text-yellow-300"></i>
+                        <span>Feito com Amor</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Produtos Relacionados -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold text-cream-blue mb-6">
+                    Complete Sua Experiência
+                </h2>
+                <p class="text-xl text-gray-600">
+                    Descubra outros sabores únicos da nossa coleção artesanal
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <a href="damasco.html" class="group">
+                    <div class="bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl p-8 hover-lift transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                        <div class="text-center">
+                            <div class="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                                <i class="fas fa-seedling text-orange-500 text-3xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-cream-blue mb-3">🍑 Damasco</h3>
+                            <p class="text-gray-600 mb-4">Doçura mediterrânea em cada colherada</p>
+                            <span class="text-orange-600 font-medium group-hover:underline">Ver produto →</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="pimenta.html" class="group">
+                    <div class="bg-gradient-to-br from-red-50 to-red-100 rounded-2xl p-8 hover-lift transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                        <div class="text-center">
+                            <div class="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                                <i class="fas fa-fire text-red-500 text-3xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-cream-blue mb-3">🌶️ Pimenta</h3>
+                            <p class="text-gray-600 mb-4">Intensidade que desperta os sentidos</p>
+                            <span class="text-red-600 font-medium group-hover:underline">Ver produto →</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="frutas-vermelhas.html" class="group">
+                    <div class="bg-gradient-to-br from-pink-50 to-pink-100 rounded-2xl p-8 hover-lift transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+                        <div class="text-center">
+                            <div class="w-20 h-20 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                                <i class="fas fa-gem text-pink-500 text-3xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-cream-blue mb-3">🍓 Frutas Vermelhas</h3>
+                            <p class="text-gray-600 mb-4">Frescor vibrante e cremosidade única</p>
+                            <span class="text-pink-600 font-medium group-hover:underline">Ver produto →</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <a href="index.html" class="flex items-center space-x-2 mb-4 md:mb-0">
+                    <div class="w-8 h-8 bg-cream-yellow rounded-full flex items-center justify-center">
+                        <i class="fas fa-cheese text-white"></i>
+                    </div>
+                    <span class="text-xl font-bold">Cream UP</span>
+                </a>
+                
+                <div class="text-center md:text-right">
+                    <p class="text-gray-400 mb-2">
+                        © 2025 Cream UP. Todos os direitos reservados.
+                    </p>
+                    <p class="text-gray-500 text-sm">
+                        🧄 Alho • Tradição aromática • Feito com ❤️
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 w-12 h-12 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg opacity-0 invisible transition-all duration-300 z-40">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+    
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Inicializar AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+        
+        // Elementos do DOM
+        const menuToggle = document.getElementById('menu-toggle');
+        const menuClose = document.getElementById('menu-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const backToTop = document.getElementById('back-to-top');
+        
+        // Menu mobile toggle
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+        });
+        
+        menuClose.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+        });
+        
+        // Fechar menu mobile ao clicar fora
+        document.addEventListener('click', (e) => {
+            if (!mobileMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+                mobileMenu.classList.remove('active');
+            }
+        });
+        
+        // Scroll effects
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            
+            // Back to top button
+            if (scrolled > 500) {
+                backToTop.classList.remove('opacity-0', 'invisible');
+                backToTop.classList.add('opacity-100', 'visible');
+            } else {
+                backToTop.classList.add('opacity-0', 'invisible');
+                backToTop.classList.remove('opacity-100', 'visible');
+            }
+        });
+        
+        // Back to top functionality
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Navegação suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Efeito de partículas aromáticas
+        const createAromaParticle = () => {
+            const particle = document.createElement('div');
+            particle.className = 'fixed w-2 h-2 bg-green-400 opacity-20 rounded-full pointer-events-none z-0';
+            particle.style.left = Math.random() * 100 + 'vw';
+            particle.style.top = '100vh';
+            document.body.appendChild(particle);
+            
+            const animation = particle.animate([
+                { transform: 'translateY(0px) scale(1)', opacity: 0.2 },
+                { transform: 'translateY(-150vh) scale(0)', opacity: 0 }
+            ], {
+                duration: 4000 + Math.random() * 3000,
+                easing: 'ease-out'
+            });
+            
+            animation.onfinish = () => particle.remove();
+        };
+        
+        // Criar partículas aromáticas ocasionalmente
+        setInterval(createAromaParticle, 3000);
+        
+        // Console welcome
+        console.log('%c🧄 Aroma tradicional do Cream UP Alho! 🧄', 'color: #16A34A; font-size: 20px; font-weight: bold;');
+    </script>
+</body>
+</html>

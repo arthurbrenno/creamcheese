@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cream Cheese Pimenta - Intensidade que desperta os sentidos. Artesanal, marcante e premium.">
+    <title>Cream UP - Pimenta | Intensidade que Desperta</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+        
+        /* Cores customizadas da marca */
+        .bg-cream-blue { background-color: #235784; }
+        .bg-cream-light { background-color: #40A8C4; }
+        .bg-cream-yellow { background-color: #F7AA00; }
+        .bg-cream-gray { background-color: #EEF6F7; }
+        .text-cream-blue { color: #235784; }
+        .text-cream-light { color: #40A8C4; }
+        .text-cream-yellow { color: #F7AA00; }
+        .border-cream-yellow { border-color: #F7AA00; }
+        
+        /* Gradiente específico da pimenta */
+        .pimenta-gradient { 
+            background: linear-gradient(135deg, #DC2626 0%, #EF4444 50%, #F87171 100%); 
+        }
+        .pimenta-light-gradient {
+            background: linear-gradient(145deg, #FEF2F2 0%, #FEE2E2 100%);
+        }
+        
+        /* Animações */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+        .float-animation { animation: float 4s ease-in-out infinite; }
+        
+        @keyframes pulse-red {
+            0%, 100% { box-shadow: 0 0 20px rgba(220, 38, 38, 0.3); }
+            50% { box-shadow: 0 0 30px rgba(220, 38, 38, 0.6); }
+        }
+        .pulse-red { animation: pulse-red 2s ease-in-out infinite; }
+        
+        @keyframes fire-flicker {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            25% { transform: scale(1.1) rotate(-2deg); }
+            50% { transform: scale(1.05) rotate(1deg); }
+            75% { transform: scale(1.08) rotate(-1deg); }
+        }
+        .fire-flicker { animation: fire-flicker 2s ease-in-out infinite; }
+        
+        .hover-lift:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        html { scroll-behavior: smooth; }
+        
+        .menu-mobile {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        .menu-mobile.active {
+            transform: translateX(0);
+        }
+        
+        /* Gradiente texto */
+        .text-pimenta-gradient {
+            background: linear-gradient(135deg, #DC2626, #EF4444);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Efeito de calor */
+        .heat-wave {
+            background: linear-gradient(45deg, transparent 30%, rgba(239, 68, 68, 0.1) 50%, transparent 70%);
+            animation: heat-wave 3s linear infinite;
+        }
+        @keyframes heat-wave {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+    <!-- Header -->
+    <header class="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-lg z-50 transition-all duration-300">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-cream-yellow rounded-full flex items-center justify-center">
+                        <i class="fas fa-cheese text-white text-xl"></i>
+                    </div>
+                    <span class="text-2xl font-bold text-cream-blue">Cream UP</span>
+                </a>
+                
+                <!-- Menu Desktop -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-cream-blue transition-colors font-medium">Início</a>
+                    <div class="relative group">
+                        <a href="index.html#produtos" class="text-cream-blue font-medium cursor-pointer">Produtos</a>
+                        <div class="absolute top-full left-0 mt-2 w-48 bg-white shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                            <a href="damasco.html" class="block px-4 py-3 text-gray-700 hover:text-orange-600 transition-colors">🍑 Damasco</a>
+                            <a href="pimenta.html" class="block px-4 py-3 text-red-600 font-medium border-l-4 border-red-500">🌶️ Pimenta</a>
+                            <a href="alho.html" class="block px-4 py-3 text-gray-700 hover:text-green-600 transition-colors">🧄 Alho</a>
+                            <a href="frutas-vermelhas.html" class="block px-4 py-3 text-gray-700 hover:text-pink-600 transition-colors">🍓 Frutas Vermelhas</a>
+                        </div>
+                    </div>
+                    <a href="index.html#sobre" class="text-gray-700 hover:text-cream-blue transition-colors font-medium">Sobre</a>
+                    <a href="index.html#contato" class="text-gray-700 hover:text-cream-blue transition-colors font-medium">Contato</a>
+                </nav>
+                
+                <!-- Menu Mobile Button -->
+                <button class="md:hidden text-cream-blue text-2xl" id="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Menu Mobile -->
+        <div class="menu-mobile fixed top-0 right-0 h-full w-64 bg-white shadow-xl md:hidden z-50" id="mobile-menu">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-8">
+                    <span class="text-xl font-bold text-cream-blue">Menu</span>
+                    <button id="menu-close" class="text-gray-500 text-xl">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <nav class="flex flex-col space-y-6">
+                    <a href="index.html" class="text-gray-700 hover:text-cream-blue transition-colors font-medium">Início</a>
+                    <a href="damasco.html" class="text-gray-700 hover:text-cream-blue transition-colors font-medium">🍑 Damasco</a>
+                    <div class="border-l-4 border-red-500 pl-4">
+                        <span class="text-red-600 font-medium">🌶️ Pimenta</span>
+                    </div>
+                    <a href="alho.html" class="text-gray-700 hover:text-cream-blue transition-colors font-medium">🧄 Alho</a>
+                    <a href="frutas-vermelhas.html" class="text-gray-700 hover:text-cream-blue transition-colors font-medium">🍓 Frutas Vermelhas</a>
+                    <a href="index.html#sobre" class="text-gray-700 hover:text-cream-blue transition-colors font-medium">Sobre</a>
+                    <a href="index.html#contato" class="text-gray-700 hover:text-cream-blue transition-colors font-medium">Contato</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="pimenta-gradient min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+        <!-- Elementos decorativos com efeito de calor -->
+        <div class="absolute top-32 left-10 w-20 h-20 bg-white/20 rounded-full float-animation fire-flicker"></div>
+        <div class="absolute bottom-20 right-10 w-16 h-16 bg-white/15 rounded-full float-animation fire-flicker" style="animation-delay: 1s;"></div>
+        <div class="absolute inset-0 heat-wave"></div>
+        
+        <div class="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center relative z-10">
+            <div data-aos="fade-right" data-aos-duration="1000">
+                <div class="inline-block bg-white/20 rounded-full px-4 py-2 mb-6">
+                    <span class="text-white font-medium">🌶️ Sabor Intenso</span>
+                </div>
+                <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+                    Cream Cheese
+                    <span class="block text-yellow-200">Pimenta</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed">
+                    Intensidade que desperta os sentidos. Um toque picante 
+                    equilibrado pela cremosidade sedosa
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <button class="bg-white text-red-600 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 pulse-red hover:scale-105">
+                        <i class="fas fa-fire mr-2"></i>
+                        Sentir o Calor
+                    </button>
+                    <button class="border-2 border-white text-white hover:bg-white hover:text-red-600 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300">
+                        <i class="fas fa-thermometer-three-quarters mr-2"></i>
+                        Ver Intensidade
+                    </button>
+                </div>
+            </div>
+            
+            <div data-aos="fade-left" data-aos-duration="1000" class="relative">
+                <div class="relative z-10">
+                    <div class="w-80 h-80 mx-auto bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm">
+                        <div class="w-64 h-64 bg-white rounded-full flex items-center justify-center">
+                            <i class="fas fa-fire text-red-500 text-8xl fire-flicker"></i>
+                        </div>
+                    </div>
+                </div>
+                <!-- Círculos decorativos */
+                <div class="absolute -top-8 -right-8 w-16 h-16 bg-yellow-300/30 rounded-full fire-flicker"></div>
+                <div class="absolute -bottom-8 -left-8 w-24 h-24 bg-red-300/20 rounded-full fire-flicker" style="animation-delay: 0.5s;"></div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Medidor de Intensidade -->
+    <section class="py-20 bg-cream-gray">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-4xl font-bold text-cream-blue mb-6">
+                    Nível de Intensidade
+                </h2>
+                <p class="text-xl text-gray-600">
+                    Nosso cream cheese pimenta oferece o equilíbrio perfeito entre sabor e intensidade
+                </p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <!-- Escala de calor -->
+                <div class="bg-white rounded-2xl p-8 mb-8" data-aos="zoom-in">
+                    <h3 class="text-2xl font-bold text-center text-cream-blue mb-8">Escala Scoville</h3>
+                    <div class="relative">
+                        <div class="h-6 bg-gradient-to-r from-green-300 via-yellow-400 via-orange-500 to-red-600 rounded-full"></div>
+                        <div class="absolute top-0 left-1/3 w-4 h-6 bg-white border-2 border-red-500 rounded-full transform -translate-x-1/2"></div>
+                        <div class="flex justify-between text-sm text-gray-600 mt-2">
+                            <span>Suave</span>
+                            <span class="font-bold text-red-600">Nosso Produto</span>
+                            <span>Extremo</span>
+                        </div>
+                        <div class="text-center mt-4">
+                            <span class="text-2xl font-bold text-red-600">2.500 - 5.000 SHU</span>
+                            <p class="text-gray-600">Intensidade moderada, ideal para todos os paladares</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Características da intensidade -->
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-white rounded-xl p-6 text-center" data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-smile text-green-500 text-2xl"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-cream-blue mb-2">Iniciantes</h4>
+                        <p class="text-gray-600 text-sm">Perfeito para quem está começando a explorar sabores picantes</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-6 text-center" data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-star text-yellow-500 text-2xl"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-cream-blue mb-2">Equilibrio</h4>
+                        <p class="text-gray-600 text-sm">Intensidade na medida certa, sem ofuscar outros sabores</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-6 text-center" data-aos="fade-up" data-aos-delay="300">
+                        <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-fire text-red-500 text-2xl"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-cream-blue mb-2">Memorável</h4>
+                        <p class="text-gray-600 text-sm">Deixa uma impressão duradoura sem ser agressivo</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Informações do Produto -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div data-aos="fade-right">
+                    <h2 class="text-4xl font-bold text-cream-blue mb-6">
+                        O Fogo que <span class="text-pimenta-gradient">Conquista</span>
+                    </h2>
+                    <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+                        Nosso cream cheese de pimenta é uma obra-prima culinária que combina a cremosidade 
+                        artesanal com a intensidade cuidadosamente calibrada de pimentas selecionadas. 
+                        Cada lote é preparado com precisão para garantir o equilíbrio perfeito.
+                    </p>
+                    <p class="text-lg text-gray-700 mb-8 leading-relaxed">
+                        Utilizamos uma blend exclusiva de pimentas que proporciona calor gradual, 
+                        permitindo que você aprecie todos os sabores enquanto sente a intensidade 
+                        crescer suavemente. É picante o suficiente para despertar seus sentidos, 
+                        mas equilibrado para acompanhar diversos pratos.
+                    </p>
+                    
+                    <!-- Características especiais -->
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center">
+                            <i class="fas fa-thermometer-half text-red-500 mr-3"></i>
+                            <span class="font-medium">Intensidade moderada (2.500-5.000 SHU)</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-balance-scale text-red-500 mr-3"></i>
+                            <span class="font-medium">Equilibrio perfeito entre cremosidade e picância</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-seedling text-red-500 mr-3"></i>
+                            <span class="font-medium">Pimentas frescas e naturais</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-clock text-red-500 mr-3"></i>
+                            <span class="font-medium">Sabor que evolui no paladar</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Tags do produto -->
+                    <div class="flex flex-wrap gap-3">
+                        <span class="bg-red-100 text-red-700 px-4 py-2 rounded-full text-sm font-medium">
+                            <i class="fas fa-fire mr-2"></i>Intenso
+                        </span>
+                        <span class="bg-red-100 text-red-700 px-4 py-2 rounded-full text-sm font-medium">
+                            <i class="fas fa-bolt mr-2"></i>Marcante
+                        </span>
+                        <span class="bg-red-100 text-red-700 px-4 py-2 rounded-full text-sm font-medium">
+                            <i class="fas fa-heart mr-2"></i>Artesanal
+                        </span>
+                        <span class="bg-red-100 text-red-700 px-4 py-2 rounded-full text-sm font-medium">
+                            <i class="fas fa-gem mr-2"></i>Premium
+                        </span>
+                    </div>
+                </div>
+                
+                <div data-aos="fade-left" class="relative">
+                    <div class="pimenta-light-gradient rounded-3xl p-8">
+                        <h3 class="text-2xl font-bold text-cream-blue mb-6 text-center">
+                            Informações Nutricionais
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center py-3 border-b border-red-200">
+                                <span class="font-medium">Porção (30g)</span>
+                                <span class="text-red-600 font-bold">78 kcal</span>
+                            </div>
+                            <div class="flex justify-between items-center py-3 border-b border-red-200">
+                                <span class="font-medium">Proteínas</span>
+                                <span class="text-red-600 font-bold">3,5g</span>
+                            </div>
+                            <div class="flex justify-between items-center py-3 border-b border-red-200">
+                                <span class="font-medium">Carboidratos</span>
+                                <span class="text-red-600 font-bold">2,8g</span>
+                            </div>
+                            <div class="flex justify-between items-center py-3 border-b border-red-200">
+                                <span class="font-medium">Gorduras Totais</span>
+                                <span class="text-red-600 font-bold">6,5g</span>
+                            </div>
+                            <div class="flex justify-between items-center py-3 border-b border-red-200">
+                                <span class="font-medium">Capsaicina</span>
+                                <span class="text-red-600 font-bold">4mg</span>
+                            </div>
+                            <div class="flex justify-between items-center py-3">
+                                <span class="font-medium">Vitamina C</span>
+                                <span class="text-red-600 font-bold">15mg</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Benefícios da pimenta -->
+                        <div class="mt-6 p-4 bg-red-50 rounded-lg">
+                            <h4 class="font-bold text-red-700 mb-2">💪 Benefícios da Capsaicina:</h4>
+                            <ul class="text-sm text-red-600 space-y-1">
+                                <li>• Acelera o metabolismo</li>
+                                <li>• Ação antioxidante</li>
+                                <li>• Melhora a circulação</li>
+                                <li>• Libera endorfinas</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Tipos de Pimenta Utilizadas -->
+    <section class="py-20 pimenta-light-gradient">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold text-cream-blue mb-6">
+                    Blend Exclusivo de Pimentas
+                </h2>
+                <p class="text-xl text-gray-700 max-w-3xl mx-auto">
+                    Uma combinação especial de pimentas cuidadosamente selecionadas para criar o sabor perfeito
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white rounded-2xl p-6 hover-lift transition-all duration-300" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-3xl">🌶️</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-cream-blue mb-3">Jalapeño</h3>
+                        <div class="text-sm text-red-600 mb-2">2.500 - 8.000 SHU</div>
+                        <p class="text-gray-600 text-sm">
+                            Base do nosso blend, oferece calor equilibrado e sabor frutado
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-6 hover-lift transition-all duration-300" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-3xl">🫑</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-cream-blue mb-3">Pimentão Doce</h3>
+                        <div class="text-sm text-red-600 mb-2">0 SHU</div>
+                        <p class="text-gray-600 text-sm">
+                            Adiciona doçura natural e equilibra a intensidade
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-6 hover-lift transition-all duration-300" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-3xl">🌶️</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-cream-blue mb-3">Pimenta Biquinho</h3>
+                        <div class="text-sm text-red-600 mb-2">500 - 1.000 SHU</div>
+                        <p class="text-gray-600 text-sm">
+                            Toque suave e aroma característico brasileiro
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-6 hover-lift transition-all duration-300" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-3xl">🫐</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-cream-blue mb-3">Ervas Aromáticas</h3>
+                        <div class="text-sm text-red-600 mb-2">Complemento</div>
+                        <p class="text-gray-600 text-sm">
+                            Manjericão e orégano para complexidade de sabor
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Harmonização e Uso -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold text-cream-blue mb-6">
+                    Harmonizações Especiais
+                </h2>
+                <p class="text-xl text-gray-700 max-w-3xl mx-auto">
+                    Descubra combinações que realçam a intensidade e cremosidade do nosso cream cheese
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gradient-to-br from-red-50 to-orange-50 rounded-2xl p-8 hover-lift transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-utensils text-red-500 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-cream-blue">Pratos Mexicanos</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Perfeito para nachos, quesadillas, tacos e burritos. Realça os sabores tradicionais
+                    </p>
+                    <div class="text-sm text-red-600">
+                        <i class="fas fa-fire mr-1"></i> Intensidade ideal para pratos temperados
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-br from-orange-50 to-yellow-50 rounded-2xl p-8 hover-lift transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-hamburger text-orange-500 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-cream-blue">Sanduíches Gourmet</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Adiciona personalidade a hamburgers, wraps e sanduíches artesanais
+                    </p>
+                    <div class="text-sm text-red-600">
+                        <i class="fas fa-star mr-1"></i> Transforma lanches simples em experiências
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-br from-yellow-50 to-green-50 rounded-2xl p-8 hover-lift transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-seedling text-yellow-500 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-cream-blue">Vegetais Grelhados</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Complementa berinjela, abobrinha e pimentões grelhados
+                    </p>
+                    <div class="text-sm text-red-600">
+                        <i class="fas fa-leaf mr-1"></i> Equilibra doçura natural dos vegetais
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-br from-green-50 to-blue-50 rounded-2xl p-8 hover-lift transition-all duration-300" data-aos="fade-up" data-aos-delay="400">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-fish text-green-500 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-cream-blue">Frutos do Mar</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Excecional com camarões, peixe grelhado e pratos de frutos do mar
+                    </p>
+                    <div class="text-sm text-red-600">
+                        <i class="fas fa-water mr-1"></i> Contraste perfeito com sabores do mar
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-8 hover-lift transition-all duration-300" data-aos="fade-up" data-aos-delay="500">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-wine-glass text-blue-500 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-cream-blue">Bebidas</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Harmoniza com cervejas IPA, vinhos tintos e drinks com limão
+                    </p>
+                    <div class="text-sm text-red-600">
+                        <i class="fas fa-glass-cheers mr-1"></i> Intensifica experiências gustativas
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-8 hover-lift transition-all duration-300" data-aos="fade-up" data-aos-delay="600">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-pizza-slice text-purple-500 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-cream-blue">Petiscos</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Ideal para acompanhar petiscos, pizzas e aperitivos em geral
+                    </p>
+                    <div class="text-sm text-red-600">
+                        <i class="fas fa-users mr-1"></i> Perfeito para reuniões e festas
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA de Compra -->
+    <section class="py-20 bg-cream-blue relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-red-400/20 to-orange-400/20"></div>
+        <div class="absolute inset-0 heat-wave"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center max-w-4xl mx-auto" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                    Desperte Seus Sentidos
+                </h2>
+                <p class="text-xl text-white/90 mb-8 leading-relaxed">
+                    Sinta a intensidade perfeita em cada colherada. 
+                    Nosso cream cheese de pimenta é a combinação ideal entre cremosidade artesanal 
+                    e o calor equilibrado que vai transformar seus pratos.
+                </p>
+                
+                <!-- Oferta especial -->
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mb-8 inline-block">
+                    <div class="text-yellow-300 font-bold text-lg mb-2">🔥 Oferta Quente</div>
+                    <div class="text-white text-3xl font-bold mb-2">
+                        <span class="line-through text-white/60 text-xl">R$ 34,90</span>
+                        <span class="ml-2">R$ 29,90</span>
+                    </div>
+                    <div class="text-white/80">Desconto especial para corajosos</div>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button class="bg-white text-red-600 px-10 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105 pulse-red">
+                        <i class="fas fa-fire mr-2"></i>
+                        Sentir o Calor - R$ 29,90
+                    </button>
+                    <button class="border-2 border-white text-white hover:bg-white hover:text-cream-blue px-10 py-4 rounded-full font-semibold text-lg transition-all duration-300">
+                        <i class="fas fa-whatsapp mr-2"></i>
+                        WhatsApp
+                    </button>
+                </div>
+                
+                <!-- Garantias -->
+                <div class="flex flex-wrap justify-center gap-8 mt-12 text-white/80">
+                    <div class="flex items-center">
+                        <i class="fas fa-thermometer-half mr-2 text-yellow-300"></i>
+                        <span>Intensidade Garantida</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-hand-holding-heart mr-2 text-yellow-300"></i>
+                        <span>Artesanal</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-shipping-fast mr-2 text-yellow-300"></i>
+                        <span>Entrega Rápida</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-medal mr-2 text-yellow-300"></i>
+                        <span>Qualidade Premium</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Produtos Relacionados -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold text-cream-blue mb-6">
+                    Explore Outros Sabores
+                </h2>
+                <p class="text-xl text-gray-600">
+                    Descubra toda nossa coleção de cream cheeses artesanais
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <a href="damasco.html" class="group">
+                    <div class="bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl p-8 hover-lift transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                        <div class="text-center">
+                            <div class="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                                <i class="fas fa-seedling text-orange-500 text-3xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-cream-blue mb-3">🍑 Damasco</h3>
+                            <p class="text-gray-600 mb-4">Doçura mediterrânea em cada colherada</p>
+                            <span class="text-orange-600 font-medium group-hover:underline">Ver produto →</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="alho.html" class="group">
+                    <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-8 hover-lift transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                        <div class="text-center">
+                            <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                                <i class="fas fa-spa text-green-500 text-3xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-cream-blue mb-3">🧄 Alho</h3>
+                            <p class="text-gray-600 mb-4">Tradição aromática que conquista</p>
+                            <span class="text-green-600 font-medium group-hover:underline">Ver produto →</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="frutas-vermelhas.html" class="group">
+                    <div class="bg-gradient-to-br from-pink-50 to-pink-100 rounded-2xl p-8 hover-lift transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+                        <div class="text-center">
+                            <div class="w-20 h-20 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                                <i class="fas fa-gem text-pink-500 text-3xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-cream-blue mb-3">🍓 Frutas Vermelhas</h3>
+                            <p class="text-gray-600 mb-4">Frescor vibrante e cremosidade única</p>
+                            <span class="text-pink-600 font-medium group-hover:underline">Ver produto →</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <a href="index.html" class="flex items-center space-x-2 mb-4 md:mb-0">
+                    <div class="w-8 h-8 bg-cream-yellow rounded-full flex items-center justify-center">
+                        <i class="fas fa-cheese text-white"></i>
+                    </div>
+                    <span class="text-xl font-bold">Cream UP</span>
+                </a>
+                
+                <div class="text-center md:text-right">
+                    <p class="text-gray-400 mb-2">
+                        © 2025 Cream UP. Todos os direitos reservados.
+                    </p>
+                    <p class="text-gray-500 text-sm">
+                        🌶️ Pimenta • Intensidade que desperta • Feito com ❤️
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 w-12 h-12 bg-red-500 hover:bg-red-600 text-white rounded-full shadow-lg opacity-0 invisible transition-all duration-300 z-40">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+    
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Inicializar AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+        
+        // Elementos do DOM
+        const menuToggle = document.getElementById('menu-toggle');
+        const menuClose = document.getElementById('menu-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const backToTop = document.getElementById('back-to-top');
+        
+        // Menu mobile toggle
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+        });
+        
+        menuClose.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+        });
+        
+        // Fechar menu mobile ao clicar fora
+        document.addEventListener('click', (e) => {
+            if (!mobileMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+                mobileMenu.classList.remove('active');
+            }
+        });
+        
+        // Scroll effects
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            
+            // Back to top button
+            if (scrolled > 500) {
+                backToTop.classList.remove('opacity-0', 'invisible');
+                backToTop.classList.add('opacity-100', 'visible');
+            } else {
+                backToTop.classList.add('opacity-0', 'invisible');
+                backToTop.classList.remove('opacity-100', 'visible');
+            }
+        });
+        
+        // Back to top functionality
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Navegação suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Efeito de calor no background
+        const createHeatParticle = () => {
+            const particle = document.createElement('div');
+            particle.className = 'fixed w-1 h-1 bg-red-400 opacity-30 rounded-full pointer-events-none z-0';
+            particle.style.left = Math.random() * 100 + 'vw';
+            particle.style.top = '100vh';
+            document.body.appendChild(particle);
+            
+            const animation = particle.animate([
+                { transform: 'translateY(0px) scale(1)', opacity: 0.3 },
+                { transform: 'translateY(-100vh) scale(0)', opacity: 0 }
+            ], {
+                duration: 3000 + Math.random() * 2000,
+                easing: 'ease-out'
+            });
+            
+            animation.onfinish = () => particle.remove();
+        };
+        
+        // Criar partículas de calor ocasionalmente
+        setInterval(createHeatParticle, 2000);
+        
+        // Console welcome
+        console.log('%c🌶️ Sinta o calor do Cream UP Pimenta! 🌶️', 'color: #DC2626; font-size: 20px; font-weight: bold;');
+    </script>
+</body>
+</html>

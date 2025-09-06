@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cream UP - Cream cheeses artesanais premium nos sabores Damasco, Pimenta, Alho e Frutas Vermelhas">
+    <meta name="keywords" content="cream cheese, artesanal, damasco, pimenta, alho, frutas vermelhas, gourmet">
+    <title>Cream UP - Sabores Que Elevam</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        /* Fonte customizada */
+        body { font-family: 'Poppins', sans-serif; }
+        
+        /* Cores customizadas da marca */
+        .bg-cream-blue { background-color: #235784; }
+        .bg-cream-light { background-color: #40A8C4; }
+        .bg-cream-yellow { background-color: #F7AA00; }
+        .bg-cream-gray { background-color: #EEF6F7; }
+        .text-cream-blue { color: #235784; }
+        .text-cream-light { color: #40A8C4; }
+        .text-cream-yellow { color: #F7AA00; }
+        .border-cream-yellow { border-color: #F7AA00; }
+        
+        /* Gradientes customizados */
+        .hero-gradient { 
+            background: linear-gradient(135deg, #235784 0%, #40A8C4 100%); 
+        }
+        .card-gradient {
+            background: linear-gradient(145deg, #ffffff 0%, #EEF6F7 100%);
+        }
+        
+        /* Animações customizadas */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+        .float-animation { animation: float 4s ease-in-out infinite; }
+        
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(247, 170, 0, 0.3); }
+            50% { box-shadow: 0 0 30px rgba(247, 170, 0, 0.6); }
+        }
+        .pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
+        
+        /* Efeitos hover customizados */
+        .hover-lift:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        /* Scroll suave */
+        html { scroll-behavior: smooth; }
+        
+        /* Menu mobile */
+        .menu-mobile {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        .menu-mobile.active {
+            transform: translateX(0);
+        }
+        
+        /* Loading animation */
+        .loading-dots {
+            display: inline-block;
+        }
+        .loading-dots::after {
+            content: '';
+            animation: dots 1.5s infinite;
+        }
+        @keyframes dots {
+            0%, 20% { content: ''; }
+            40% { content: '.'; }
+            60% { content: '..'; }
+            80%, 100% { content: '...'; }
+        }
+
+        /* Efeitos específicos dos produtos */
+        .damasco-effect {
+            background: linear-gradient(45deg, #FF6B35, #F7931E);
+            position: relative;
+        }
+        .damasco-effect::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 30% 30%, rgba(255, 179, 71, 0.3) 0%, transparent 50%);
+            animation: pulse-warmth 4s ease-in-out infinite;
+        }
+        
+        .pimenta-effect {
+            background: linear-gradient(45deg, #DC2626, #EF4444);
+            position: relative;
+        }
+        .pimenta-effect::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 70% 70%, rgba(239, 68, 68, 0.4) 0%, transparent 50%);
+            animation: fire-flicker 2s ease-in-out infinite;
+        }
+        
+        .alho-effect {
+            background: linear-gradient(45deg, #16A34A, #22C55E);
+            position: relative;
+        }
+        .alho-effect::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: conic-gradient(from 0deg, transparent, rgba(34, 197, 94, 0.2), transparent);
+            animation: aroma-rotate 8s linear infinite;
+        }
+        
+        .frutas-effect {
+            background: linear-gradient(45deg, #EC4899, #F43F5E);
+            position: relative;
+        }
+        .frutas-effect::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(236, 72, 153, 0.3) 0%, transparent 60%);
+            animation: berry-sparkle 3s ease-in-out infinite;
+        }
+        
+        @keyframes pulse-warmth {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.1); }
+        }
+        
+        @keyframes fire-flicker {
+            0%, 100% { opacity: 0.4; transform: scale(1) rotate(0deg); }
+            25% { opacity: 0.7; transform: scale(1.05) rotate(-2deg); }
+            75% { opacity: 0.6; transform: scale(1.03) rotate(2deg); }
+        }
+        
+        @keyframes aroma-rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        @keyframes berry-sparkle {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.2); }
+        }
+
+        /* Efeitos de hover ultra-avançados */
+        .hover-magic {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hover-magic::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .hover-magic:hover::before {
+            left: 100%;
+        }
+        
+        .hover-magic:hover {
+            transform: translateY(-15px) scale(1.05) rotateX(5deg);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Efeito de ondas */
+        .wave-effect {
+            background: linear-gradient(45deg, transparent 40%, rgba(247, 170, 0, 0.1) 50%, transparent 60%);
+            background-size: 200% 200%;
+            animation: wave-move 3s ease-in-out infinite;
+        }
+        
+        @keyframes wave-move {
+            0%, 100% { background-position: 0% 0%; }
+            50% { background-position: 100% 100%; }
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+    <!-- Header -->
+    <header class="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-lg z-50 transition-all duration-300" id="header">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-cream-yellow rounded-full flex items-center justify-center">
+                        <i class="fas fa-cheese text-white text-xl"></i>
+                    </div>
+                    <span class="text-2xl font-bold text-cream-blue">Cream UP</span>
+                </div>
+                
+                <!-- Menu Desktop -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-cream-blue transition-colors font-medium">Início</a>
+                    <a href="#produtos" class="text-gray-700 hover:text-cream-blue transition-colors font-medium">Produtos</a>
+                    <a href="#sobre" class="text-gray-700 hover:text-cream-blue transition-colors font-medium">Sobre</a>
+                    <a href="#contato" class="text-gray-700 hover:text-cream-blue transition-colors font-medium">Contato</a>
+                </nav>
+                
+                <!-- Menu Mobile Button -->
+                <button class="md:hidden text-cream-blue text-2xl" id="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Menu Mobile -->
+        <div class="menu-mobile fixed top-0 right-0 h-full w-64 bg-white shadow-xl md:hidden z-50" id="mobile-menu">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-8">
+                    <span class="text-xl font-bold text-cream-blue">Menu</span>
+                    <button id="menu-close" class="text-gray-500 text-xl">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <nav class="flex flex-col space-y-6">
+                    <a href="#home" class="text-gray-700 hover:text-cream-blue transition-colors font-medium">Início</a>
+                    <a href="#produtos" class="text-gray-700 hover:text-cream-blue transition-colors font-medium">Produtos</a>
+                    <a href="#sobre" class="text-gray-700 hover:text-cream-blue transition-colors font-medium">Sobre</a>
+                    <a href="#contato" class="text-gray-700 hover:text-cream-blue transition-colors font-medium">Contato</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient min-h-screen flex items-center justify-center relative overflow-hidden">
+        <!-- Elementos decorativos flutuantes -->
+        <div class="absolute top-20 left-10 w-20 h-20 bg-white/20 rounded-full float-animation"></div>
+        <div class="absolute bottom-20 right-10 w-16 h-16 bg-white/15 rounded-full float-animation" style="animation-delay: 1s;"></div>
+        <div class="absolute top-1/2 left-5 w-12 h-12 bg-white/10 rounded-full float-animation" style="animation-delay: 2s;"></div>
+        
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <div data-aos="fade-up" data-aos-duration="1000">
+                <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+                    Sabores Que
+                    <span class="text-cream-yellow block">Elevam</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed">
+                    Descubra a cremosidade perfeita dos nossos cream cheeses artesanais, 
+                    criados com ingredientes selecionados e muito amor
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#produtos" class="bg-cream-yellow hover:bg-yellow-500 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 pulse-glow">
+                        <i class="fas fa-star mr-2"></i>
+                        Conheça os Sabores
+                    </a>
+                    <a href="#sobre" class="border-2 border-white text-white hover:bg-white hover:text-cream-blue px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300">
+                        <i class="fas fa-heart mr-2"></i>
+                        Nossa História
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i class="fas fa-chevron-down text-white text-2xl"></i>
+        </div>
+    </section>
+    
+    <!-- Produtos Section - Ultra-Moderna -->
+    <section id="produtos" class="py-32 bg-white relative overflow-hidden">
+        <!-- Background decorativo -->
+        <div class="absolute inset-0 wave-effect opacity-30"></div>
+        
+        <div class="container mx-auto px-4 relative z-10">
+            <!-- Header da Seção -->
+            <div class="text-center mb-20" data-aos="fade-up">
+                <div class="inline-block bg-cream-yellow/10 rounded-full px-6 py-2 mb-6">
+                    <span class="text-cream-blue font-semibold">🌟 Nossa Coleção Premium</span>
+                </div>
+                <h2 class="text-5xl md:text-7xl font-black text-cream-blue mb-8 leading-tight">
+                    Quatro <span class="text-cream-light">Universos</span> de Sabor
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    Cada sabor conta uma história única, criada artesanalmente 
+                    para proporcionar uma <span class="font-bold text-cream-blue">experiência gastronômica inesquecível</span>
+                </p>
+            </div>
+            
+            <!-- Grid de Produtos Ultra-Moderno -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
+                <!-- Produto 1: Damasco -->
+                <div class="damasco-effect rounded-3xl p-12 hover-magic group cursor-pointer" data-aos="fade-up" data-aos-delay="100" onclick="window.location.href='damasco.html'">
+                    <div class="relative z-10">
+                        <div class="flex items-center justify-between mb-8">
+                            <div class="w-20 h-20 bg-white/20 rounded-2xl flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform duration-300">
+                                <i class="fas fa-seedling text-white text-3xl group-hover:rotate-12 transition-transform duration-300"></i>
+                            </div>
+                            <div class="text-white/80 text-sm font-medium">
+                                <i class="fas fa-leaf mr-1"></i> Natural
+                                <span class="mx-2">•</span>
+                                <i class="fas fa-heart mr-1"></i> Premium
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-4xl font-black text-white mb-4 group-hover:scale-105 transition-transform duration-300">
+                            🍑 Damasco
+                        </h3>
+                        <p class="text-white/90 text-lg mb-8 leading-relaxed">
+                            Doçura mediterrânea em cada colherada. A suavidade do damasco 
+                            se encontra com a cremosidade perfeita em uma sinfonia de sabores únicos.
+                        </p>
+                        
+                        <!-- Características -->
+                        <div class="flex flex-wrap gap-3 mb-8">
+                            <span class="bg-white/20 text-white px-4 py-2 rounded-full text-sm font-medium backdrop-blur-sm">
+                                Artesanal
+                            </span>
+                            <span class="bg-white/20 text-white px-4 py-2 rounded-full text-sm font-medium backdrop-blur-sm">
+                                Natural
+                            </span>
+                            <span class="bg-white/20 text-white px-4 py-2 rounded-full text-sm font-medium backdrop-blur-sm">
+                                Mediterrâneo
+                            </span>
+                        </div>
+                        
+                        <div class="flex items-center justify-between">
+                            <div class="text-white">
+                                <span class="text-2xl font-bold">R$ 27,90</span>
+                                <span class="text-white/60 line-through ml-2">R$ 32,90</span>
+                            </div>
+                            <button class="bg-white text-orange-600 px-6 py-3 rounded-full font-semibold hover:scale-105 transition-all duration-300 shadow-lg">
+                                Experimentar →
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Produto 2: Pimenta -->
+                <div class="pimenta-effect rounded-3xl p-12 hover-magic group cursor-pointer" data-aos="fade-up" data-aos-delay="200" onclick="window.location.href='pimenta.html'">
+                    <div class="relative z-10">
+                        <div class="flex items-center justify-between mb-8">
+                            <div class="w-20 h-20 bg-white/20 rounded-2xl flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform duration-300">
+                                <i class="fas fa-fire text-white text-3xl group-hover:rotate-12 transition-transform duration-300"></i>
+                            </div>
+                            <div class="text-white/80 text-sm font-medium">
+                                <i class="fas fa-fire mr-1"></i> Intenso
+                                <span class="mx-2">•</span>
+                                <i class="fas fa-bolt mr-1"></i> Marcante
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-4xl font-black text-white mb-4 group-hover:scale-105 transition-transform duration-300">
+                            🌶️ Pimenta
+                        </h3>
+                        <p class="text-white/90 text-lg mb-8 leading-relaxed">
+                            Intensidade que desperta os sentidos. Um toque picante 
+                            equilibrado pela cremosidade sedosa que conquista paladares exigentes.
+                        </p>
+                        
+                        <!-- Características -->
+                        <div class="flex flex-wrap gap-3 mb-8">
+                            <span class="bg-white/20 text-white px-4 py-2 rounded-full text-sm font-medium backdrop-blur-sm">
+                                Intenso
+                            </span>
+                            <span class="bg-white/20 text-white px-4 py-2 rounded-full text-sm font-medium backdrop-blur-sm">
+                                Marcante
+                            </span>
+                            <span class="bg-white/20 text-white px-4 py-2 rounded-full text-sm font-medium backdrop-blur-sm">
+                                Equilibrado
+                            </span>
+                        </div>
+                        
+                        <div class="flex items-center justify-between">
+                            <div class="text-white">
+                                <span class="text-2xl font-bold">R$ 29,90</span>
+                                <span class="text-white/60 line-through ml-2">R$ 34,90</span>
+                            </div>
+                            <button class="bg-white text-red-600 px-6 py-3 rounded-full font-semibold hover:scale-105 transition-all duration-300 shadow-lg">
+                                Sentir o Calor →
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Produto 3: Alho -->
+                <div class="alho-effect rounded-3xl p-12 hover-magic group cursor-pointer" data-aos="fade-up" data-aos-delay="300" onclick="window.location.href='alho.html'">
+                    <div class="relative z-10">
+                        <div class="flex items-center justify-between mb-8">
+                            <div class="w-20 h-20 bg-white/20 rounded-2xl flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform duration-300">
+                                <i class="fas fa-spa text-white text-3xl group-hover:rotate-12 transition-transform duration-300"></i>
+                            </div>
+                            <div class="text-white/80 text-sm font-medium">
+                                <i class="fas fa-crown mr-1"></i> Clássico
+                                <span class="mx-2">•</span>
+                                <i class="fas fa-star mr-1"></i> Premium
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-4xl font-black text-white mb-4 group-hover:scale-105 transition-transform duration-300">
+                            🧄 Alho
+                        </h3>
+                        <p class="text-white/90 text-lg mb-8 leading-relaxed">
+                            Tradição aromática que conquista. O sabor clássico 
+                            reinventado com sofisticação e cremosidade que transcende gerações.
+                        </p>
+                        
+                        <!-- Características -->
+                        <div class="flex flex-wrap gap-3 mb-8">
+                            <span class="bg-white/20 text-white px-4 py-2 rounded-full text-sm font-medium backdrop-blur-sm">
+                                Clássico
+                            </span>
+                            <span class="bg-white/20 text-white px-4 py-2 rounded-full text-sm font-medium backdrop-blur-sm">
+                                Aromático
+                            </span>
+                            <span class="bg-white/20 text-white px-4 py-2 rounded-full text-sm font-medium backdrop-blur-sm">
+                                Tradicional
+                            </span>
+                        </div>
+                        
+                        <div class="flex items-center justify-between">
+                            <div class="text-white">
+                                <span class="text-2xl font-bold">R$ 26,90</span>
+                                <span class="text-white/60 line-through ml-2">R$ 31,90</span>
+                            </div>
+                            <button class="bg-white text-green-600 px-6 py-3 rounded-full font-semibold hover:scale-105 transition-all duration-300 shadow-lg">
+                                Tradição →
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Produto 4: Frutas Vermelhas -->
+                <div class="frutas-effect rounded-3xl p-12 hover-magic group cursor-pointer" data-aos="fade-up" data-aos-delay="400" onclick="window.location.href='frutas-vermelhas.html'">
+                    <div class="relative z-10">
+                        <div class="flex items-center justify-between mb-8">
+                            <div class="w-20 h-20 bg-white/20 rounded-2xl flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform duration-300">
+                                <i class="fas fa-gem text-white text-3xl group-hover:rotate-12 transition-transform duration-300"></i>
+                            </div>
+                            <div class="text-white/80 text-sm font-medium">
+                                <i class="fas fa-magic mr-1"></i> Vibrante
+                                <span class="mx-2">•</span>
+                                <i class="fas fa-rainbow mr-1"></i> Especial
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-4xl font-black text-white mb-4 group-hover:scale-105 transition-transform duration-300">
+                            🍓 Frutas Vermelhas
+                        </h3>
+                        <p class="text-white/90 text-lg mb-8 leading-relaxed">
+                            Frescor vibrante e cremosidade única. A explosão de sabores 
+                            das frutas em perfeita harmonia com nossa base artesanal.
+                        </p>
+                        
+                        <!-- Características -->
+                        <div class="flex flex-wrap gap-3 mb-8">
+                            <span class="bg-white/20 text-white px-4 py-2 rounded-full text-sm font-medium backdrop-blur-sm">
+                                Vibrante
+                            </span>
+                            <span class="bg-white/20 text-white px-4 py-2 rounded-full text-sm font-medium backdrop-blur-sm">
+                                Especial
+                            </span>
+                            <span class="bg-white/20 text-white px-4 py-2 rounded-full text-sm font-medium backdrop-blur-sm">
+                                Frescor
+                            </span>
+                        </div>
+                        
+                        <div class="flex items-center justify-between">
+                            <div class="text-white">
+                                <span class="text-2xl font-bold">R$ 31,90</span>
+                                <span class="text-white/60 line-through ml-2">R$ 36,90</span>
+                            </div>
+                            <button class="bg-white text-pink-600 px-6 py-3 rounded-full font-semibold hover:scale-105 transition-all duration-300 shadow-lg">
+                                Explodir →
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- CTA Section Melhorada -->
+            <div class="text-center" data-aos="fade-up" data-aos-delay="600">
+                <div class="bg-cream-gray rounded-3xl p-12 max-w-4xl mx-auto shadow-2xl border border-gray-200">
+                    <h3 class="text-4xl font-black text-cream-blue mb-6">
+                        Pronto para uma Jornada Gastronômica Única?
+                    </h3>
+                    <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+                        Cada sabor é uma experiência que vai transformar seus momentos especiais em memórias inesquecíveis
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                        <a href="#contato" class="bg-cream-yellow hover:bg-yellow-500 text-cream-blue px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 pulse-glow hover:scale-105">
+                            <i class="fas fa-shopping-cart mr-2"></i>
+                            Fazer Pedido Agora
+                        </a>
+                        <a href="#sobre" class="border-2 border-cream-blue text-cream-blue hover:bg-cream-blue hover:text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 hover:scale-105">
+                            <i class="fas fa-info-circle mr-2"></i>
+                            Conhecer Mais
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Sobre Section -->
+    <section id="sobre" class="py-20 bg-cream-gray">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <h2 class="text-4xl md:text-5xl font-bold text-cream-blue mb-6">
+                        Nossa História
+                    </h2>
+                    <p class="text-lg leading-relaxed text-gray-700 mb-6">
+                        A Cream UP nasceu da paixão por criar experiências gastronômicas únicas. 
+                        Em nossa pequena cozinha artesanal, cada cream cheese é preparado com 
+                        ingredientes cuidadosamente selecionados e muito amor.
+                    </p>
+                    <p class="text-lg leading-relaxed text-gray-700 mb-6">
+                        Acreditamos que os melhores sabores vêm da combinação perfeita entre 
+                        tradição e inovação. Nossos mestres queijeiros dedicam horas de trabalho 
+                        artesanal para garantir a textura cremosa e os sabores autênticos que 
+                        conquistaram o coração de nossos clientes.
+                    </p>
+                    
+                    <!-- Stats -->
+                    <div class="grid grid-cols-3 gap-6 mt-8">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-cream-light mb-2">100%</div>
+                            <div class="text-sm text-gray-600">Artesanal</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-cream-light mb-2">4</div>
+                            <div class="text-sm text-gray-600">Sabores Únicos</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-cream-light mb-2">500+</div>
+                            <div class="text-sm text-gray-600">Clientes Felizes</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div data-aos="fade-left" class="relative">
+                    <div class="bg-gradient-to-br from-cream-light to-cream-blue p-8 rounded-2xl">
+                        <div class="bg-white/90 rounded-xl p-6 text-center">
+                            <i class="fas fa-award text-cream-yellow text-6xl mb-4"></i>
+                            <h3 class="text-2xl font-bold text-cream-blue mb-3">
+                                Qualidade Premium
+                            </h3>
+                            <p class="text-gray-700">
+                                Ingredientes selecionados, processo artesanal e 
+                                controle rigoroso de qualidade em cada etapa
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Elementos decorativos -->
+                    <div class="absolute -top-4 -right-4 w-8 h-8 bg-cream-yellow rounded-full"></div>
+                    <div class="absolute -bottom-4 -left-4 w-6 h-6 bg-cream-light rounded-full"></div>
+                </div>
+            </div>
+            
+            <!-- Valores -->
+            <div class="mt-20" data-aos="fade-up">
+                <h3 class="text-3xl font-bold text-center text-cream-blue mb-12">
+                    Nossos Valores
+                </h3>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="text-center p-6">
+                        <div class="w-16 h-16 bg-cream-yellow rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-heart text-white text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-cream-blue mb-3">Paixão</h4>
+                        <p class="text-gray-600">
+                            Cada produto é feito com amor e dedicação, 
+                            garantindo a melhor experiência gastronômica
+                        </p>
+                    </div>
+                    <div class="text-center p-6">
+                        <div class="w-16 h-16 bg-cream-light rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-leaf text-white text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-cream-blue mb-3">Natureza</h4>
+                        <p class="text-gray-600">
+                            Ingredientes naturais e frescos, respeitando 
+                            o meio ambiente e sua saúde
+                        </p>
+                    </div>
+                    <div class="text-center p-6">
+                        <div class="w-16 h-16 bg-cream-blue rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-star text-white text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-cream-blue mb-3">Excelência</h4>
+                        <p class="text-gray-600">
+                            Compromisso com a qualidade superior 
+                            em cada detalhe do nosso processo
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contato Section -->
+    <section id="contato" class="py-20 bg-cream-blue">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                    Entre em Contato
+                </h2>
+                <p class="text-xl text-white/90 max-w-2xl mx-auto">
+                    Pronto para experimentar nossos sabores únicos? 
+                    Entre em contato e faça seu pedido personalizado
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                <!-- Formulário -->
+                <div class="bg-white rounded-2xl p-8" data-aos="fade-right">
+                    <h3 class="text-2xl font-bold text-cream-blue mb-6">
+                        Faça Seu Pedido
+                    </h3>
+                    <form id="contact-form" class="space-y-6">
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Nome Completo</label>
+                            <input type="text" id="nome" required 
+                                   class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-cream-light focus:border-transparent transition-all duration-300" 
+                                   placeholder="Seu nome completo">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">E-mail</label>
+                            <input type="email" id="email" required 
+                                   class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-cream-light focus:border-transparent transition-all duration-300" 
+                                   placeholder="seu@email.com">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Telefone</label>
+                            <input type="tel" id="telefone" required 
+                                   class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-cream-light focus:border-transparent transition-all duration-300" 
+                                   placeholder="(00) 00000-0000">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Sabores de Interesse</label>
+                            <div class="grid grid-cols-2 gap-3">
+                                <label class="flex items-center">
+                                    <input type="checkbox" value="damasco" class="mr-2 text-cream-light">
+                                    <span>🍑 Damasco</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" value="pimenta" class="mr-2 text-cream-light">
+                                    <span>🌶️ Pimenta</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" value="alho" class="mr-2 text-cream-light">
+                                    <span>🧄 Alho</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" value="frutas-vermelhas" class="mr-2 text-cream-light">
+                                    <span>🍓 Frutas Vermelhas</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Mensagem</label>
+                            <textarea id="mensagem" rows="4" 
+                                      class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-cream-light focus:border-transparent transition-all duration-300" 
+                                      placeholder="Conte-nos mais sobre seu pedido..."></textarea>
+                        </div>
+                        <button type="submit" 
+                                class="w-full bg-cream-yellow hover:bg-yellow-500 text-white py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105">
+                            <span id="btn-text">
+                                <i class="fas fa-paper-plane mr-2"></i>
+                                Enviar Pedido
+                            </span>
+                            <span id="btn-loading" class="hidden">
+                                <i class="fas fa-spinner fa-spin mr-2"></i>
+                                Enviando<span class="loading-dots"></span>
+                            </span>
+                        </button>
+                    </form>
+                    
+                    <!-- Mensagem de sucesso -->
+                    <div id="success-message" class="hidden mt-6 p-4 bg-green-100 border border-green-300 rounded-lg">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span class="text-green-700">Pedido enviado com sucesso! Entraremos em contato em breve.</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Informações de contato -->
+                <div data-aos="fade-left">
+                    <div class="bg-white/10 rounded-2xl p-8 mb-8">
+                        <h3 class="text-2xl font-bold text-white mb-6">
+                            Outras Formas de Contato
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center text-white">
+                                <i class="fas fa-phone text-cream-yellow mr-4 text-xl"></i>
+                                <span>(11) 9999-8888</span>
+                            </div>
+                            <div class="flex items-center text-white">
+                                <i class="fas fa-envelope text-cream-yellow mr-4 text-xl"></i>
+                                <span>contato@creamup.com.br</span>
+                            </div>
+                            <div class="flex items-center text-white">
+                                <i class="fas fa-map-marker-alt text-cream-yellow mr-4 text-xl"></i>
+                                <span>São Paulo, SP - Brasil</span>
+                            </div>
+                            <div class="flex items-center text-white">
+                                <i class="fas fa-clock text-cream-yellow mr-4 text-xl"></i>
+                                <span>Seg à Sex: 8h às 18h</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Redes sociais -->
+                    <div class="bg-white/10 rounded-2xl p-8">
+                        <h3 class="text-xl font-bold text-white mb-4">
+                            Siga-nos nas Redes Sociais
+                        </h3>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-12 h-12 bg-cream-yellow rounded-full flex items-center justify-center hover:bg-yellow-500 transition-colors">
+                                <i class="fab fa-instagram text-white text-xl"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-cream-yellow rounded-full flex items-center justify-center hover:bg-yellow-500 transition-colors">
+                                <i class="fab fa-facebook text-white text-xl"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-cream-yellow rounded-full flex items-center justify-center hover:bg-yellow-500 transition-colors">
+                                <i class="fab fa-whatsapp text-white text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-2 mb-4 md:mb-0">
+                    <div class="w-8 h-8 bg-cream-yellow rounded-full flex items-center justify-center">
+                        <i class="fas fa-cheese text-white"></i>
+                    </div>
+                    <span class="text-xl font-bold">Cream UP</span>
+                </div>
+                
+                <div class="text-center md:text-right">
+                    <p class="text-gray-400 mb-2">
+                        © 2025 Cream UP. Todos os direitos reservados.
+                    </p>
+                    <p class="text-gray-500 text-sm">
+                        Sabores que elevam • Qualidade artesanal • Feito com ❤️
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 w-12 h-12 bg-cream-yellow hover:bg-yellow-500 text-white rounded-full shadow-lg opacity-0 invisible transition-all duration-300 z-40">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+    
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Inicializar AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+        
+        // Elementos do DOM
+        const header = document.getElementById('header');
+        const menuToggle = document.getElementById('menu-toggle');
+        const menuClose = document.getElementById('menu-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const contactForm = document.getElementById('contact-form');
+        const backToTop = document.getElementById('back-to-top');
+        
+        // Navegação suave para links âncora
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Fechar menu mobile se estiver aberto
+                    mobileMenu.classList.remove('active');
+                }
+            });
+        });
+        
+        // Menu mobile toggle
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+        });
+        
+        menuClose.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+        });
+        
+        // Fechar menu mobile ao clicar em link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
+        });
+        
+        // Fechar menu mobile ao clicar fora
+        document.addEventListener('click', (e) => {
+            if (!mobileMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+                mobileMenu.classList.remove('active');
+            }
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            
+            // Header background
+            if (scrolled > 100) {
+                header.classList.add('bg-white/95');
+                header.classList.remove('bg-white/95');
+                header.classList.add('shadow-lg');
+            } else {
+                header.classList.remove('shadow-lg');
+            }
+            
+            // Back to top button
+            if (scrolled > 500) {
+                backToTop.classList.remove('opacity-0', 'invisible');
+                backToTop.classList.add('opacity-100', 'visible');
+            } else {
+                backToTop.classList.add('opacity-0', 'invisible');
+                backToTop.classList.remove('opacity-100', 'visible');
+            }
+            
+            // Highlight active menu item
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('nav a[href^="#"]');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 150;
+                if (scrolled >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('text-cream-blue');
+                link.classList.add('text-gray-700');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('text-cream-blue');
+                    link.classList.remove('text-gray-700');
+                }
+            });
+        });
+        
+        // Back to top functionality
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Form submission
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            // Elementos do formulário
+            const btnText = document.getElementById('btn-text');
+            const btnLoading = document.getElementById('btn-loading');
+            const successMessage = document.getElementById('success-message');
+            
+            // Mostrar loading
+            btnText.classList.add('hidden');
+            btnLoading.classList.remove('hidden');
+            
+            // Simular envio (substituir por integração real)
+            await new Promise(resolve => setTimeout(resolve, 2000));
+            
+            // Restaurar botão
+            btnLoading.classList.add('hidden');
+            btnText.classList.remove('hidden');
+            
+            // Mostrar mensagem de sucesso
+            successMessage.classList.remove('hidden');
+            
+            // Limpar formulário
+            contactForm.reset();
+            
+            // Esconder mensagem após 5 segundos
+            setTimeout(() => {
+                successMessage.classList.add('hidden');
+            }, 5000);
+        });
+        
+        // Validação em tempo real dos campos
+        const inputs = contactForm.querySelectorAll('input[required], textarea[required]');
+        inputs.forEach(input => {
+            input.addEventListener('blur', validateField);
+            input.addEventListener('input', clearValidation);
+        });
+        
+        function validateField(e) {
+            const field = e.target;
+            const value = field.value.trim();
+            
+            // Remover classes de validação anteriores
+            field.classList.remove('border-red-500', 'border-green-500');
+            
+            if (!value) {
+                field.classList.add('border-red-500');
+                showFieldError(field, 'Este campo é obrigatório');
+            } else if (field.type === 'email' && !isValidEmail(value)) {
+                field.classList.add('border-red-500');
+                showFieldError(field, 'Digite um e-mail válido');
+            } else {
+                field.classList.add('border-green-500');
+                hideFieldError(field);
+            }
+        }
+        
+        function clearValidation(e) {
+            const field = e.target;
+            field.classList.remove('border-red-500', 'border-green-500');
+            hideFieldError(field);
+        }
+        
+        function showFieldError(field, message) {
+            hideFieldError(field); // Remove erro anterior
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'field-error text-red-500 text-sm mt-1';
+            errorDiv.textContent = message;
+            field.parentNode.appendChild(errorDiv);
+        }
+        
+        function hideFieldError(field) {
+            const errorDiv = field.parentNode.querySelector('.field-error');
+            if (errorDiv) {
+                errorDiv.remove();
+            }
+        }
+        
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+        
+        // Animação dos números (stats)
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateStats();
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        
+        const statsSection = document.querySelector('#sobre .grid.grid-cols-3');
+        if (statsSection) {
+            statsObserver.observe(statsSection);
+        }
+        
+        function animateStats() {
+            const stats = [
+                { element: statsSection.children[0].querySelector('.text-3xl'), target: 100, suffix: '%' },
+                { element: statsSection.children[1].querySelector('.text-3xl'), target: 4, suffix: '' },
+                { element: statsSection.children[2].querySelector('.text-3xl'), target: 500, suffix: '+' }
+            ];
+            
+            stats.forEach(stat => {
+                let current = 0;
+                const increment = stat.target / 50;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= stat.target) {
+                        current = stat.target;
+                        clearInterval(timer);
+                    }
+                    stat.element.textContent = Math.floor(current) + stat.suffix;
+                }, 40);
+            });
+        }
+        
+        // Parallax effect para o hero
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('#home');
+            const speed = scrolled * 0.5;
+            parallax.style.transform = `translateY(${speed}px)`;
+        });
+        
+        // Loading screen simulation
+        window.addEventListener('load', () => {
+            document.body.classList.add('loaded');
+            // Trigger animations after load
+            setTimeout(() => {
+                AOS.refresh();
+            }, 100);
+        });
+        
+        // Touch gestures for mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        document.addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+        
+        document.addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+        
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = touchStartX - touchEndX;
+            
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    // Swipe left - open menu
+                    if (window.innerWidth <= 768) {
+                        mobileMenu.classList.add('active');
+                    }
+                } else {
+                    // Swipe right - close menu
+                    mobileMenu.classList.remove('active');
+                }
+            }
+        }
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                mobileMenu.classList.remove('active');
+            }
+        });
+        
+        // Console welcome message
+        console.log('%c🧀 Bem-vindo ao Cream UP! 🧀', 'color: #F7AA00; font-size: 20px; font-weight: bold;');
+        console.log('%cSite desenvolvido com ❤️ usando Tailwind CSS', 'color: #235784; font-size: 14px;');
+    </script>
+</body>
+</html>

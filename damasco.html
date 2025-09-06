@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cream Cheese Damasco - Doçura mediterrânea em cada colherada. Artesanal, natural e premium.">
+    <title>Cream UP - Damasco | Doçura Mediterrânea</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+        
+        /* Cores customizadas da marca */
+        .bg-cream-blue { background-color: #235784; }
+        .bg-cream-light { background-color: #40A8C4; }
+        .bg-cream-yellow { background-color: #F7AA00; }
+        .bg-cream-gray { background-color: #EEF6F7; }
+        .text-cream-blue { color: #235784; }
+        .text-cream-light { color: #40A8C4; }
+        .text-cream-yellow { color: #F7AA00; }
+        .border-cream-yellow { border-color: #F7AA00; }
+        
+        /* Gradiente específico do damasco */
+        .damasco-gradient { 
+            background: linear-gradient(135deg, #FF6B35 0%, #F7931E 50%, #FFB347 100%); 
+        }
+        .damasco-light-gradient {
+            background: linear-gradient(145deg, #FFF5E6 0%, #FFE4B5 100%);
+        }
+        
+        /* Animações */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+        .float-animation { animation: float 4s ease-in-out infinite; }
+        
+        @keyframes pulse-orange {
+            0%, 100% { box-shadow: 0 0 20px rgba(255, 107, 53, 0.3); }
+            50% { box-shadow: 0 0 30px rgba(255, 107, 53, 0.6); }
+        }
+        .pulse-orange { animation: pulse-orange 2s ease-in-out infinite; }
+        
+        .hover-lift:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        html { scroll-behavior: smooth; }
+        
+        .menu-mobile {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        .menu-mobile.active {
+            transform: translateX(0);
+        }
+        
+        /* Efeito de zoom nas imagens */
+        .zoom-hover:hover img {
+            transform: scale(1.1);
+        }
+        
+        /* Gradiente texto */
+        .text-damasco-gradient {
+            background: linear-gradient(135deg, #FF6B35, #F7931E);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+    <!-- Header -->
+    <header class="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-lg z-50 transition-all duration-300">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-cream-yellow rounded-full flex items-center justify-center">
+                        <i class="fas fa-cheese text-white text-xl"></i>
+                    </div>
+                    <span class="text-2xl font-bold text-cream-blue">Cream UP</span>
+                </a>
+                
+                <!-- Menu Desktop -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-cream-blue transition-colors font-medium">Início</a>
+                    <div class="relative group">
+                        <a href="index.html#produtos" class="text-cream-blue font-medium cursor-pointer">Produtos</a>
+                        <div class="absolute top-full left-0 mt-2 w-48 bg-white shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                            <a href="damasco.html" class="block px-4 py-3 text-orange-600 font-medium border-l-4 border-orange-500">🍑 Damasco</a>
+                            <a href="pimenta.html" class="block px-4 py-3 text-gray-700 hover:text-red-600 transition-colors">🌶️ Pimenta</a>
+                            <a href="alho.html" class="block px-4 py-3 text-gray-700 hover:text-green-600 transition-colors">🧄 Alho</a>
+                            <a href="frutas-vermelhas.html" class="block px-4 py-3 text-gray-700 hover:text-pink-600 transition-colors">🍓 Frutas Vermelhas</a>
+                        </div>
+                    </div>
+                    <a href="index.html#sobre" class="text-gray-700 hover:text-cream-blue transition-colors font-medium">Sobre</a>
+                    <a href="index.html#contato" class="text-gray-700 hover:text-cream-blue transition-colors font-medium">Contato</a>
+                </nav>
+                
+                <!-- Menu Mobile Button -->
+                <button class="md:hidden text-cream-blue text-2xl" id="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Menu Mobile -->
+        <div class="menu-mobile fixed top-0 right-0 h-full w-64 bg-white shadow-xl md:hidden z-50" id="mobile-menu">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-8">
+                    <span class="text-xl font-bold text-cream-blue">Menu</span>
+                    <button id="menu-close" class="text-gray-500 text-xl">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <nav class="flex flex-col space-y-6">
+                    <a href="index.html" class="text-gray-700 hover:text-cream-blue transition-colors font-medium">Início</a>
+                    <div class="border-l-4 border-orange-500 pl-4">
+                        <span class="text-orange-600 font-medium">🍑 Damasco</span>
+                    </div>
+                    <a href="pimenta.html" class="text-gray-700 hover:text-cream-blue transition-colors font-medium">🌶️ Pimenta</a>
+                    <a href="alho.html" class="text-gray-700 hover:text-cream-blue transition-colors font-medium">🧄 Alho</a>
+                    <a href="frutas-vermelhas.html" class="text-gray-700 hover:text-cream-blue transition-colors font-medium">🍓 Frutas Vermelhas</a>
+                    <a href="index.html#sobre" class="text-gray-700 hover:text-cream-blue transition-colors font-medium">Sobre</a>
+                    <a href="index.html#contato" class="text-gray-700 hover:text-cream-blue transition-colors font-medium">Contato</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="damasco-gradient min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+        <!-- Elementos decorativos -->
+        <div class="absolute top-32 left-10 w-20 h-20 bg-white/20 rounded-full float-animation"></div>
+        <div class="absolute bottom-20 right-10 w-16 h-16 bg-white/15 rounded-full float-animation" style="animation-delay: 1s;"></div>
+        
+        <div class="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right" data-aos-duration="1000">
+                <div class="inline-block bg-white/20 rounded-full px-4 py-2 mb-6">
+                    <span class="text-white font-medium">🍑 Sabor Premium</span>
+                </div>
+                <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+                    Cream Cheese
+                    <span class="block text-yellow-200">Damasco</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed">
+                    Doçura mediterrânea em cada colherada. A suavidade do damasco 
+                    se encontra com a cremosidade perfeita
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <button class="bg-white text-orange-600 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 pulse-orange hover:scale-105">
+                        <i class="fas fa-shopping-cart mr-2"></i>
+                        Comprar Agora
+                    </button>
+                    <button class="border-2 border-white text-white hover:bg-white hover:text-orange-600 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300">
+                        <i class="fas fa-info-circle mr-2"></i>
+                        Ver Detalhes
+                    </button>
+                </div>
+            </div>
+            
+            <div data-aos="fade-left" data-aos-duration="1000" class="relative">
+                <div class="relative z-10">
+                    <div class="w-80 h-80 mx-auto bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm">
+                        <div class="w-64 h-64 bg-white rounded-full flex items-center justify-center">
+                            <i class="fas fa-seedling text-orange-500 text-8xl"></i>
+                        </div>
+                    </div>
+                </div>
+                <!-- Círculos decorativos -->
+                <div class="absolute -top-8 -right-8 w-16 h-16 bg-yellow-300/30 rounded-full"></div>
+                <div class="absolute -bottom-8 -left-8 w-24 h-24 bg-orange-300/20 rounded-full"></div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Informações do Produto -->
+    <section class="py-20 bg-cream-gray">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-leaf text-orange-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-cream-blue mb-2">100% Natural</h3>
+                    <p class="text-gray-600">Feito com damascos frescos selecionados</p>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-hand-holding-heart text-orange-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-cream-blue mb-2">Artesanal</h3>
+                    <p class="text-gray-600">Produzido em pequenos lotes com cuidado</p>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-star text-orange-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-cream-blue mb-2">Premium</h3>
+                    <p class="text-gray-600">Qualidade superior em cada porção</p>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div data-aos="fade-right">
+                    <h2 class="text-4xl font-bold text-cream-blue mb-6">
+                        O Sabor do <span class="text-damasco-gradient">Mediterrâneo</span>
+                    </h2>
+                    <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+                        Nosso cream cheese de damasco é uma homenagem aos sabores ensolarados do Mediterrâneo. 
+                        Cada fruto é cuidadosamente selecionado no ponto perfeito de maturação, garantindo 
+                        aquela doçura natural e aroma inconfundível.
+                    </p>
+                    <p class="text-lg text-gray-700 mb-8 leading-relaxed">
+                        A cremosidade sedosa do nosso cream cheese artesanal se une harmoniosamente com 
+                        a suavidade do damasco, criando uma experiência gastronômica única que desperta 
+                        os sentidos e transporta você para uma viagem sensorial inesquecível.
+                    </p>
+                    
+                    <!-- Tags do produto -->
+                    <div class="flex flex-wrap gap-3">
+                        <span class="bg-orange-100 text-orange-700 px-4 py-2 rounded-full text-sm font-medium">
+                            <i class="fas fa-seedling mr-2"></i>Natural
+                        </span>
+                        <span class="bg-orange-100 text-orange-700 px-4 py-2 rounded-full text-sm font-medium">
+                            <i class="fas fa-heart mr-2"></i>Artesanal
+                        </span>
+                        <span class="bg-orange-100 text-orange-700 px-4 py-2 rounded-full text-sm font-medium">
+                            <i class="fas fa-leaf mr-2"></i>Sem Conservantes
+                        </span>
+                        <span class="bg-orange-100 text-orange-700 px-4 py-2 rounded-full text-sm font-medium">
+                            <i class="fas fa-award mr-2"></i>Premium
+                        </span>
+                    </div>
+                </div>
+                
+                <div data-aos="fade-left" class="relative">
+                    <div class="damasco-light-gradient rounded-3xl p-8">
+                        <h3 class="text-2xl font-bold text-cream-blue mb-6 text-center">
+                            Informações Nutricionais
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center py-3 border-b border-orange-200">
+                                <span class="font-medium">Porção (30g)</span>
+                                <span class="text-orange-600 font-bold">85 kcal</span>
+                            </div>
+                            <div class="flex justify-between items-center py-3 border-b border-orange-200">
+                                <span class="font-medium">Proteínas</span>
+                                <span class="text-orange-600 font-bold">3,2g</span>
+                            </div>
+                            <div class="flex justify-between items-center py-3 border-b border-orange-200">
+                                <span class="font-medium">Carboidratos</span>
+                                <span class="text-orange-600 font-bold">4,1g</span>
+                            </div>
+                            <div class="flex justify-between items-center py-3 border-b border-orange-200">
+                                <span class="font-medium">Gorduras Totais</span>
+                                <span class="text-orange-600 font-bold">6,8g</span>
+                            </div>
+                            <div class="flex justify-between items-center py-3">
+                                <span class="font-medium">Vitamina A</span>
+                                <span class="text-orange-600 font-bold">180mg</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Ingredientes -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold text-cream-blue mb-6">
+                    Ingredientes Selecionados
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Apenas os melhores ingredientes fazem parte da nossa receita especial
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="text-center hover-lift transition-all duration-300" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="w-24 h-24 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-seedling text-orange-500 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-cream-blue mb-3">Damascos Frescos</h3>
+                    <p class="text-gray-600 text-sm">
+                        Selecionados no ponto perfeito de maturação para máximo sabor
+                    </p>
+                </div>
+                
+                <div class="text-center hover-lift transition-all duration-300" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="w-24 h-24 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-tint text-blue-500 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-cream-blue mb-3">Cream Cheese Base</h3>
+                    <p class="text-gray-600 text-sm">
+                        Cremosidade premium feita com leite fresco da melhor qualidade
+                    </p>
+                </div>
+                
+                <div class="text-center hover-lift transition-all duration-300" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="w-24 h-24 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-cube text-yellow-500 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-cream-blue mb-3">Açúcar Orgânico</h3>
+                    <p class="text-gray-600 text-sm">
+                        Toque sutil de doçura natural para realçar o sabor do damasco
+                    </p>
+                </div>
+                
+                <div class="text-center hover-lift transition-all duration-300" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="w-24 h-24 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-leaf text-green-500 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-cream-blue mb-3">Essências Naturais</h3>
+                    <p class="text-gray-600 text-sm">
+                        Aromas naturais que intensificam a experiência gastronômica
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Sugestões de Consumo -->
+    <section class="py-20 damasco-light-gradient">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold text-cream-blue mb-6">
+                    Como Apreciar
+                </h2>
+                <p class="text-xl text-gray-700 max-w-3xl mx-auto">
+                    Descubra as melhores formas de saborear nosso cream cheese de damasco
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl p-8 hover-lift transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-bread-slice text-orange-500 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-cream-blue">Torradas Gourmet</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Espalhe sobre torradas artesanais crocantes para um café da manhã especial
+                    </p>
+                    <div class="text-sm text-orange-600">
+                        <i class="fas fa-clock mr-1"></i> Melhor horário: Manhã
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-8 hover-lift transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-cookie-bite text-orange-500 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-cream-blue">Biscoitos Premium</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Combine com biscoitos doces ou salgados para um lanche sofisticado
+                    </p>
+                    <div class="text-sm text-orange-600">
+                        <i class="fas fa-clock mr-1"></i> Melhor horário: Tarde
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-8 hover-lift transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-birthday-cake text-orange-500 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-cream-blue">Sobremesas</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Use como recheio de bolos, cupcakes ou como cobertura de cheesecakes
+                    </p>
+                    <div class="text-sm text-orange-600">
+                        <i class="fas fa-clock mr-1"></i> Melhor horário: Qualquer
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-8 hover-lift transition-all duration-300" data-aos="fade-up" data-aos-delay="400">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-apple-alt text-orange-500 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-cream-blue">Frutas Frescas</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Acompanha perfeitamente maçãs, peras e outras frutas da estação
+                    </p>
+                    <div class="text-sm text-orange-600">
+                        <i class="fas fa-clock mr-1"></i> Melhor horário: Lanche
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-8 hover-lift transition-all duration-300" data-aos="fade-up" data-aos-delay="500">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-wine-glass text-orange-500 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-cream-blue">Harmonização</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Combina com vinhos brancos doces, espumantes ou chás de frutas
+                    </p>
+                    <div class="text-sm text-orange-600">
+                        <i class="fas fa-clock mr-1"></i> Melhor horário: Noite
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-8 hover-lift transition-all duration-300" data-aos="fade-up" data-aos-delay="600">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-blender text-orange-500 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-cream-blue">Smoothies</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Adicione aos seus smoothies para uma textura cremosa e sabor único
+                    </p>
+                    <div class="text-sm text-orange-600">
+                        <i class="fas fa-clock mr-1"></i> Melhor horário: Pós-treino
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA de Compra -->
+    <section class="py-20 bg-cream-blue relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-orange-400/20 to-yellow-400/20"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center max-w-4xl mx-auto" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                    Experimente a Doçura do Mediterrâneo
+                </h2>
+                <p class="text-xl text-white/90 mb-8 leading-relaxed">
+                    Cada colherada é uma viagem gastronômica única. 
+                    Faça seu pedido agora e descubra por que nosso cream cheese de damasco 
+                    é considerado uma obra-prima da gastronomia artesanal.
+                </p>
+                
+                <!-- Oferta especial -->
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mb-8 inline-block">
+                    <div class="text-yellow-300 font-bold text-lg mb-2">🎉 Oferta Especial</div>
+                    <div class="text-white text-3xl font-bold mb-2">
+                        <span class="line-through text-white/60 text-xl">R$ 32,90</span>
+                        <span class="ml-2">R$ 27,90</span>
+                    </div>
+                    <div class="text-white/80">Desconto de 15% na primeira compra</div>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button class="bg-white text-orange-600 px-10 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105 pulse-orange">
+                        <i class="fas fa-shopping-cart mr-2"></i>
+                        Comprar Agora - R$ 27,90
+                    </button>
+                    <button class="border-2 border-white text-white hover:bg-white hover:text-cream-blue px-10 py-4 rounded-full font-semibold text-lg transition-all duration-300">
+                        <i class="fas fa-whatsapp mr-2"></i>
+                        Falar no WhatsApp
+                    </button>
+                </div>
+                
+                <!-- Garantias -->
+                <div class="flex flex-wrap justify-center gap-8 mt-12 text-white/80">
+                    <div class="flex items-center">
+                        <i class="fas fa-truck mr-2 text-yellow-300"></i>
+                        <span>Entrega Grátis</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-shield-alt mr-2 text-yellow-300"></i>
+                        <span>100% Seguro</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-undo mr-2 text-yellow-300"></i>
+                        <span>7 Dias para Trocar</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-award mr-2 text-yellow-300"></i>
+                        <span>Qualidade Garantida</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Produtos Relacionados -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold text-cream-blue mb-6">
+                    Outros Sabores Incríveis
+                </h2>
+                <p class="text-xl text-gray-600">
+                    Conheça toda nossa linha de cream cheeses artesanais
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <a href="pimenta.html" class="group">
+                    <div class="bg-gradient-to-br from-red-50 to-red-100 rounded-2xl p-8 hover-lift transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                        <div class="text-center">
+                            <div class="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                                <i class="fas fa-fire text-red-500 text-3xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-cream-blue mb-3">🌶️ Pimenta</h3>
+                            <p class="text-gray-600 mb-4">Intensidade que desperta os sentidos</p>
+                            <span class="text-red-600 font-medium group-hover:underline">Ver produto →</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="alho.html" class="group">
+                    <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-8 hover-lift transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                        <div class="text-center">
+                            <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                                <i class="fas fa-spa text-green-500 text-3xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-cream-blue mb-3">🧄 Alho</h3>
+                            <p class="text-gray-600 mb-4">Tradição aromática que conquista</p>
+                            <span class="text-green-600 font-medium group-hover:underline">Ver produto →</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="frutas-vermelhas.html" class="group">
+                    <div class="bg-gradient-to-br from-pink-50 to-pink-100 rounded-2xl p-8 hover-lift transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+                        <div class="text-center">
+                            <div class="w-20 h-20 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                                <i class="fas fa-gem text-pink-500 text-3xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-cream-blue mb-3">🍓 Frutas Vermelhas</h3>
+                            <p class="text-gray-600 mb-4">Frescor vibrante e cremosidade única</p>
+                            <span class="text-pink-600 font-medium group-hover:underline">Ver produto →</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <a href="index.html" class="flex items-center space-x-2 mb-4 md:mb-0">
+                    <div class="w-8 h-8 bg-cream-yellow rounded-full flex items-center justify-center">
+                        <i class="fas fa-cheese text-white"></i>
+                    </div>
+                    <span class="text-xl font-bold">Cream UP</span>
+                </a>
+                
+                <div class="text-center md:text-right">
+                    <p class="text-gray-400 mb-2">
+                        © 2025 Cream UP. Todos os direitos reservados.
+                    </p>
+                    <p class="text-gray-500 text-sm">
+                        🍑 Damasco • Doçura mediterrânea • Feito com ❤️
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 w-12 h-12 bg-orange-500 hover:bg-orange-600 text-white rounded-full shadow-lg opacity-0 invisible transition-all duration-300 z-40">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+    
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Inicializar AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+        
+        // Elementos do DOM
+        const menuToggle = document.getElementById('menu-toggle');
+        const menuClose = document.getElementById('menu-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const backToTop = document.getElementById('back-to-top');
+        
+        // Menu mobile toggle
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+        });
+        
+        menuClose.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+        });
+        
+        // Fechar menu mobile ao clicar fora
+        document.addEventListener('click', (e) => {
+            if (!mobileMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+                mobileMenu.classList.remove('active');
+            }
+        });
+        
+        // Scroll effects
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            
+            // Back to top button
+            if (scrolled > 500) {
+                backToTop.classList.remove('opacity-0', 'invisible');
+                backToTop.classList.add('opacity-100', 'visible');
+            } else {
+                backToTop.classList.add('opacity-0', 'invisible');
+                backToTop.classList.remove('opacity-100', 'visible');
+            }
+        });
+        
+        // Back to top functionality
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Navegação suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Parallax no hero
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('section.damasco-gradient');
+            if (parallax) {
+                const speed = scrolled * 0.3;
+                parallax.style.transform = `translateY(${speed}px)`;
+            }
+        });
+        
+        // Console welcome
+        console.log('%c🍑 Bem-vindo ao Cream UP Damasco! 🍑', 'color: #FF6B35; font-size: 20px; font-weight: bold;');
+    </script>
+</body>
+</html>
