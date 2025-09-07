@@ -87,27 +87,62 @@
         <div class="container mx-auto px-4 py-4">
             <div class="flex justify-between items-center">
                 <!-- Logo -->
-                <a href="index.html" class="flex items-center space-x-2">
-                    <div class="w-10 h-10 flex items-center justify-center">
-                        <img src="logo.png" alt="Cream UP Logo" class="w-full h-full object-contain">
+                <a href="index.html" class="flex items-center space-x-3">
+                    <div class="w-12 h-12 bg-gradient-to-br from-cream-blue to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
+                        <span class="text-white font-bold text-lg">CU</span>
                     </div>
-                    <span class="text-2xl font-bold text-cream-blue">Cream UP</span>
+                    <div class="flex flex-col">
+                        <span class="text-2xl font-bold text-cream-blue leading-none">Cream UP</span>
+                        <span class="text-xs text-gray-500 leading-none">Artesanal & Premium</span>
+                    </div>
                 </a>
                 
                 <!-- Menu Desktop -->
-                <nav class="hidden md:flex space-x-8">
-                    <a href="index.html" class="text-gray-700 hover:text-cream-blue transition-colors font-medium">Início</a>
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-cream-blue transition-colors font-medium relative group">
+                        Início
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-cream-blue transition-all duration-300 group-hover:w-full"></span>
+                    </a>
                     <div class="relative group">
-                        <a href="index.html#produtos" class="text-cream-blue font-medium cursor-pointer">Produtos</a>
-                        <div class="absolute top-full left-0 mt-2 w-48 bg-white shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
-                            <a href="damasco.html" class="block px-4 py-3 text-orange-600 font-medium border-l-4 border-orange-500">🍑 Damasco</a>
-                            <a href="pimenta.html" class="block px-4 py-3 text-gray-700 hover:text-red-600 transition-colors">🌶️ Pimenta</a>
-                            <a href="alho.html" class="block px-4 py-3 text-gray-700 hover:text-green-600 transition-colors">🧄 Alho</a>
-                            <a href="frutas-vermelhas.html" class="block px-4 py-3 text-gray-700 hover:text-pink-600 transition-colors">🍓 Frutas Vermelhas</a>
+                        <a href="index.html#produtos" class="text-cream-blue font-medium cursor-pointer relative">
+                            Produtos
+                            <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-cream-blue"></span>
+                        </a>
+                        <div class="absolute top-full left-0 mt-2 w-56 bg-white shadow-xl rounded-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-100">
+                            <div class="p-2">
+                                <a href="damasco.html" class="flex items-center px-4 py-3 text-orange-600 font-medium bg-orange-50 rounded-lg border-l-4 border-orange-500">
+                                    <span class="text-xl mr-3">🍑</span>
+                                    Damasco
+                                </a>
+                                <a href="pimenta.html" class="flex items-center px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-red-50 rounded-lg transition-all duration-200">
+                                    <span class="text-xl mr-3">🌶️</span>
+                                    Pimenta
+                                </a>
+                                <a href="alho.html" class="flex items-center px-4 py-3 text-gray-700 hover:text-green-600 hover:bg-green-50 rounded-lg transition-all duration-200">
+                                    <span class="text-xl mr-3">🧄</span>
+                                    Alho
+                                </a>
+                                <a href="frutas-vermelhas.html" class="flex items-center px-4 py-3 text-gray-700 hover:text-pink-600 hover:bg-pink-50 rounded-lg transition-all duration-200">
+                                    <span class="text-xl mr-3">🍓</span>
+                                    Frutas Vermelhas
+                                </a>
+                            </div>
                         </div>
                     </div>
-                    <a href="index.html#sobre" class="text-gray-700 hover:text-cream-blue transition-colors font-medium">Sobre</a>
-                    <a href="index.html#contato" class="text-gray-700 hover:text-cream-blue transition-colors font-medium">Contato</a>
+                    <a href="index.html#sobre" class="text-gray-700 hover:text-cream-blue transition-colors font-medium relative group">
+                        Sobre
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-cream-blue transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="index.html#contato" class="text-gray-700 hover:text-cream-blue transition-colors font-medium relative group">
+                        Contato
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-cream-blue transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    
+                    <!-- CTA Button -->
+                    <a target="_blank" href="https://wa.me/5534991765159?text=Olá! Quero conhecer os deliciosos sabores do Cream UP! 🧀✨" target="_blank" class="bg-gradient-to-r from-cream-blue to-purple-600 text-white px-6 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 hover:shadow-lg hover:scale-105 flex items-center space-x-2">
+                        <i class="fas fa-whatsapp"></i>
+                        <span>Peça Já</span>
+                    </a>
                 </nav>
                 
                 <!-- Menu Mobile Button -->
@@ -118,25 +153,87 @@
         </div>
         
         <!-- Menu Mobile -->
-        <div class="menu-mobile fixed top-0 right-0 h-full w-64 bg-white shadow-xl md:hidden z-50" id="mobile-menu">
-            <div class="p-6">
+        <div class="menu-mobile fixed top-0 right-0 h-full w-80 bg-white shadow-2xl md:hidden z-50 transform translate-x-full transition-transform duration-300" id="mobile-menu">
+            <div class="p-6 h-full flex flex-col">
                 <div class="flex justify-between items-center mb-8">
-                    <span class="text-xl font-bold text-cream-blue">Menu</span>
-                    <button id="menu-close" class="text-gray-500 text-xl">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-gradient-to-br from-cream-blue to-purple-600 rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold text-sm">CU</span>
+                        </div>
+                        <span class="text-xl font-bold text-cream-blue">Menu</span>
+                    </div>
+                    <button id="menu-close" class="text-gray-500 text-xl hover:text-gray-700 transition-colors">
                         <i class="fas fa-times"></i>
                     </button>
                 </div>
-                <nav class="flex flex-col space-y-6">
-                    <a href="index.html" class="text-gray-700 hover:text-cream-blue transition-colors font-medium">Início</a>
-                    <div class="border-l-4 border-orange-500 pl-4">
-                        <span class="text-orange-600 font-medium">🍑 Damasco</span>
+                
+                <nav class="flex flex-col space-y-2 flex-1">
+                    <a href="index.html" class="flex items-center px-4 py-3 text-gray-700 hover:text-cream-blue hover:bg-blue-50 rounded-lg transition-all duration-200 font-medium">
+                        <i class="fas fa-home mr-3 text-lg"></i>
+                        Início
+                    </a>
+                    
+                    <div class="px-4 py-2">
+                        <span class="text-sm font-semibold text-gray-500 uppercase tracking-wide">Produtos</span>
                     </div>
-                    <a href="pimenta.html" class="text-gray-700 hover:text-cream-blue transition-colors font-medium">🌶️ Pimenta</a>
-                    <a href="alho.html" class="text-gray-700 hover:text-cream-blue transition-colors font-medium">🧄 Alho</a>
-                    <a href="frutas-vermelhas.html" class="text-gray-700 hover:text-cream-blue transition-colors font-medium">🍓 Frutas Vermelhas</a>
-                    <a href="index.html#sobre" class="text-gray-700 hover:text-cream-blue transition-colors font-medium">Sobre</a>
-                    <a href="index.html#contato" class="text-gray-700 hover:text-cream-blue transition-colors font-medium">Contato</a>
+                    
+                    <div class="bg-orange-50 rounded-lg p-2 border-l-4 border-orange-500">
+                        <div class="flex items-center px-2 py-2 text-orange-600 font-medium">
+                            <span class="text-xl mr-3">🍑</span>
+                            Damasco
+                        </div>
+                    </div>
+                    
+                    <a href="pimenta.html" class="flex items-center px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-red-50 rounded-lg transition-all duration-200 font-medium">
+                        <span class="text-xl mr-3">🌶️</span>
+                        Pimenta
+                    </a>
+                    
+                    <a href="alho.html" class="flex items-center px-4 py-3 text-gray-700 hover:text-green-600 hover:bg-green-50 rounded-lg transition-all duration-200 font-medium">
+                        <span class="text-xl mr-3">🧄</span>
+                        Alho
+                    </a>
+                    
+                    <a href="frutas-vermelhas.html" class="flex items-center px-4 py-3 text-gray-700 hover:text-pink-600 hover:bg-pink-50 rounded-lg transition-all duration-200 font-medium">
+                        <span class="text-xl mr-3">🍓</span>
+                        Frutas Vermelhas
+                    </a>
+                    
+                    <div class="border-t border-gray-200 my-4"></div>
+                    
+                    <a href="index.html#sobre" class="flex items-center px-4 py-3 text-gray-700 hover:text-cream-blue hover:bg-blue-50 rounded-lg transition-all duration-200 font-medium">
+                        <i class="fas fa-info-circle mr-3 text-lg"></i>
+                        Sobre
+                    </a>
+                    
+                    <a href="index.html#contato" class="flex items-center px-4 py-3 text-gray-700 hover:text-cream-blue hover:bg-blue-50 rounded-lg transition-all duration-200 font-medium">
+                        <i class="fas fa-envelope mr-3 text-lg"></i>
+                        Contato
+                    </a>
                 </nav>
+                
+                <!-- CTA Section -->
+                <div class="mt-6 p-4 bg-gradient-to-r from-cream-blue to-purple-600 rounded-xl text-white">
+                    <h3 class="font-bold text-lg mb-2">Faça seu pedido!</h3>
+                    <p class="text-sm text-white/90 mb-4">Sabores artesanais que elevam qualquer momento</p>
+                    <a target="_blank" href="https://wa.me/5534991765159?text=Olá! Quero conhecer os deliciosos sabores do Cream UP! 🧀✨" target="_blank" class="bg-white text-cream-blue px-4 py-2 rounded-full font-semibold text-sm transition-all duration-300 hover:shadow-lg flex items-center justify-center space-x-2">
+                        <i class="fas fa-whatsapp mr-2"></i>
+                        <span>Peça Já</span>
+                    </a>
+                </div>
+                
+                <!-- Social Links -->
+                <div class="mt-6 flex justify-center space-x-4">
+                    <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-blue-500 hover:text-white transition-all duration-200">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-pink-500 hover:text-white transition-all duration-200">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a target="_blank" href="https://wa.me/5534991765159" target="_blank" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-green-500 hover:text-white transition-all duration-200">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </header>
@@ -161,11 +258,11 @@
                     se encontra com a cremosidade perfeita
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="https://wa.me/5534991765159?text=Olá! Quero comprar o delicioso Cream UP Damasco agora! 🍑☀️ Como faço meu pedido?" target="_blank" class="bg-white text-orange-600 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 pulse-orange hover:scale-105">
+                    <a target="_blank" href="https://wa.me/5534991765159?text=Olá! Quero comprar o delicioso Cream UP Damasco agora! 🍑☀️ Como faço meu pedido?" target="_blank" class="bg-white text-orange-600 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 pulse-orange hover:scale-105">
                         <i class="fas fa-shopping-cart mr-2"></i>
                         Comprar Agora
                     </a>
-                    <a href="https://wa.me/5534991765159?text=Oi! Quero saber mais detalhes sobre o Cream UP Damasco! 🍑✨ Pode me contar mais?" target="_blank" class="border-2 border-white text-white hover:bg-white hover:text-orange-600 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300">
+                    <a target="_blank" href="https://wa.me/5534991765159?text=Oi! Quero saber mais detalhes sobre o Cream UP Damasco! 🍑✨ Pode me contar mais?" target="_blank" class="border-2 border-white text-white hover:bg-white hover:text-orange-600 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300">
                         <i class="fas fa-info-circle mr-2"></i>
                         Ver Detalhes
                     </a>
@@ -498,11 +595,11 @@
                 </div>
                 
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="https://wa.me/5534991765159?text=Oi! Quero comprar o Cream UP Damasco por R$ 27,90! 🍑💰 Vamos finalizar meu pedido?" target="_blank" class="bg-white text-orange-600 px-10 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105 pulse-orange">
+                    <a target="_blank" href="https://wa.me/5534991765159?text=Oi! Quero comprar o Cream UP Damasco por R$ 27,90! 🍑💰 Vamos finalizar meu pedido?" target="_blank" class="bg-white text-orange-600 px-10 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105 pulse-orange">
                         <i class="fas fa-shopping-cart mr-2"></i>
                         Comprar Agora - R$ 27,90
                     </a>
-                    <a href="https://wa.me/5534991765159?text=Olá! Estou interessado no Cream UP Damasco! 🍑🌞 Quero sentir o sol do Mediterrâneo!" target="_blank" class="border-2 border-white text-white hover:bg-white hover:text-cream-blue px-10 py-4 rounded-full font-semibold text-lg transition-all duration-300">
+                    <a target="_blank" href="https://wa.me/5534991765159?text=Olá! Estou interessado no Cream UP Damasco! 🍑🌞 Quero sentir o sol do Mediterrâneo!" target="_blank" class="border-2 border-white text-white hover:bg-white hover:text-cream-blue px-10 py-4 rounded-full font-semibold text-lg transition-all duration-300">
                         <i class="fas fa-whatsapp mr-2"></i>
                         Falar no WhatsApp
                     </a>
