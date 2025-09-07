@@ -1228,35 +1228,7 @@
             }, 100);
         });
         
-        // Touch gestures for mobile
-        let touchStartX = 0;
-        let touchEndX = 0;
-        
-        document.addEventListener('touchstart', e => {
-            touchStartX = e.changedTouches[0].screenX;
-        });
-        
-        document.addEventListener('touchend', e => {
-            touchEndX = e.changedTouches[0].screenX;
-            handleSwipe();
-        });
-        
-        function handleSwipe() {
-            const swipeThreshold = 50;
-            const diff = touchStartX - touchEndX;
-            
-            if (Math.abs(diff) > swipeThreshold) {
-                if (diff > 0) {
-                    // Swipe left - open menu
-                    if (window.innerWidth <= 768) {
-                        mobileMenu.classList.add('active');
-                    }
-                } else {
-                    // Swipe right - close menu
-                    mobileMenu.classList.remove('active');
-                }
-            }
-        }
+        // Touch gestures removidos para evitar abertura acidental do menu durante scroll
         
         // Keyboard navigation
         document.addEventListener('keydown', (e) => {
