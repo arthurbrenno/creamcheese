@@ -73,12 +73,78 @@
             max-width: 100%;
         }
         
+        /* Menu mobile */
         .menu-mobile {
             transform: translateX(100%);
             transition: transform 0.3s ease-in-out;
+            background: #ffffff !important;
+            background-color: #ffffff !important;
+            backdrop-filter: none !important;
+            -webkit-backdrop-filter: none !important;
+            opacity: 1 !important;
         }
         .menu-mobile.active {
             transform: translateX(0);
+        }
+        .menu-mobile * {
+            backdrop-filter: none !important;
+            -webkit-backdrop-filter: none !important;
+        }
+        /* Force override with ID selector */
+        #mobile-menu {
+            background: #ffffff !important;
+            background-color: #ffffff !important;
+            backdrop-filter: none !important;
+            -webkit-backdrop-filter: none !important;
+        }
+        /* Force all elements inside mobile menu to be solid white */
+        #mobile-menu nav {
+            background: #ffffff !important;
+            background-color: #ffffff !important;
+        }
+        #mobile-menu .p-6 {
+            background: #ffffff !important;
+            background-color: #ffffff !important;
+        }
+        #mobile-menu div {
+            background: #ffffff !important;
+            background-color: #ffffff !important;
+        }
+        #mobile-menu a {
+            background-color: transparent !important;
+        }
+        #mobile-menu a:hover {
+            background-color: #f3f4f6 !important;
+        }
+        /* Remove gaps and ensure full white coverage */
+        #mobile-menu {
+            background: #ffffff !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+        #mobile-menu .p-6 {
+            background: #ffffff !important;
+            padding: 1.5rem !important;
+        }
+        #mobile-menu nav a {
+            background: #ffffff !important;
+        }
+        #mobile-menu .mt-6 {
+            background: #ffffff !important;
+            margin-top: 1.5rem !important;
+            padding: 1.5rem !important;
+        }
+        #mobile-menu .bg-gray-100 {
+            background: #ffffff !important;
+        }
+        #mobile-menu img {
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+        /* Force override Tailwind classes */
+        .menu-mobile.bg-white {
+            background: #ffffff !important;
+            background-color: #ffffff !important;
         }
         
         /* Gradiente texto */
@@ -145,13 +211,16 @@
             </div>
         </div>
         
+        <!-- Mobile Menu Overlay -->
+        <div class="menu-overlay fixed inset-0 bg-black bg-opacity-75 md:hidden z-[9998] opacity-0 invisible transition-all duration-300" id="menu-overlay"></div>
+        
         <!-- Clean Mobile Menu -->
-        <div class="menu-mobile fixed top-0 right-0 h-full w-80 bg-white shadow-xl md:hidden z-50" id="mobile-menu">
+        <div class="menu-mobile fixed top-0 right-0 h-full w-80 shadow-2xl md:hidden z-[9999] transform translate-x-full transition-transform duration-300" id="mobile-menu" style="background-color: white !important;">
             <div class="p-6 h-full flex flex-col">
                 <div class="flex justify-between items-center mb-8">
                     <div class="flex items-center space-x-3">
                         <div class="w-10 h-10 bg-cream-blue rounded-lg flex items-center justify-center">
-                            <img src="logo.png" alt="Cream UP Logo" class="w-6 h-6 object-contain filter brightness-0 invert">
+                            <img src="logo.png" alt="Cream UP Logo" class="w-6 h-6 object-contain">
                         </div>
                         <span class="text-xl font-bold text-cream-blue">Menu</span>
                     </div>
@@ -181,7 +250,7 @@
                 
                 <!-- Mobile CTA -->
                 <div class="mt-6">
-                    <a target="_blank" href="https://wa.me/5534991765159?text=Olá! Quero conhecer os sabores do Cream UP!" class="bg-cream-yellow hover:bg-yellow-500 text-white px-6 py-3 rounded-full font-semibold transition-colors shadow-md flex items-center justify-center">
+                    <a target="_blank" href="https://wa.me/5534991765159?text=Olá! Quero conhecer os sabores do Cream UP!" class="bg-green-500 hover:bg-green-600 text-black px-6 py-3 rounded-full font-semibold transition-colors shadow-md flex items-center justify-center">
                         <i class="fab fa-whatsapp mr-2"></i>
                         Fazer Pedido
                     </a>
@@ -782,23 +851,29 @@
         const menuToggle = document.getElementById('menu-toggle');
         const menuClose = document.getElementById('menu-close');
         const mobileMenu = document.getElementById('mobile-menu');
+        const menuOverlay = document.getElementById('menu-overlay');
         const backToTop = document.getElementById('back-to-top');
         
         // Menu mobile toggle
         menuToggle.addEventListener('click', () => {
-            mobileMenu.classList.add('active');
+            mobileMenu.classList.remove('translate-x-full');
+            menuOverlay.classList.remove('opacity-0', 'invisible');
+            menuOverlay.classList.add('opacity-100', 'visible');
+            document.body.style.overflow = 'hidden';
         });
         
-        menuClose.addEventListener('click', () => {
-            mobileMenu.classList.remove('active');
-        });
+        // Função para fechar menu
+        function closeMenu() {
+            mobileMenu.classList.add('translate-x-full');
+            menuOverlay.classList.add('opacity-0', 'invisible');
+            menuOverlay.classList.remove('opacity-100', 'visible');
+            document.body.style.overflow = 'auto';
+        }
         
-        // Fechar menu mobile ao clicar fora
-        document.addEventListener('click', (e) => {
-            if (!mobileMenu.contains(e.target) && !menuToggle.contains(e.target)) {
-                mobileMenu.classList.remove('active');
-            }
-        });
+        menuClose.addEventListener('click', closeMenu);
+        
+        // Fechar menu mobile ao clicar no overlay
+        menuOverlay.addEventListener('click', closeMenu);
         
         // Scroll effects
         window.addEventListener('scroll', () => {
