@@ -128,72 +128,52 @@
     </style>
 </head>
 <body class="overflow-x-hidden">
-    <!-- Header -->
-    <header class="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-lg z-50 transition-all duration-300">
-        <div class="container mx-auto px-4 py-4">
+    <!-- Enhanced Header -->
+    <header class="fixed top-0 w-full bg-white/98 backdrop-blur-md shadow-xl border-b border-gray-100/50 z-50 transition-all duration-300" id="header">
+        <div class="container mx-auto px-6 py-5">
             <div class="flex justify-between items-center">
-                <!-- Logo -->
-                <a href="index.html" class="flex items-center space-x-3">
-                    <div class="w-12 h-12 bg-gradient-to-br from-cream-blue to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
-                        <span class="text-white font-bold text-lg">CU</span>
+                <!-- Enhanced Logo -->
+                <div class="flex items-center space-x-3 group">
+                    <div class="w-12 h-12 flex items-center justify-center bg-gradient-to-br from-cream-blue to-cream-light rounded-xl shadow-lg p-2">
+                        <img src="logo.png" alt="Cream UP Logo" class="w-full h-full object-contain filter brightness-0 invert">
                     </div>
                     <div class="flex flex-col">
-                        <span class="text-2xl font-bold text-cream-blue leading-none">Cream UP</span>
-                        <span class="text-xs text-gray-500 leading-none">Artesanal & Premium</span>
+                        <span class="text-2xl font-black text-cream-blue tracking-tight">Cream UP</span>
+                        <span class="text-xs text-cream-light font-medium tracking-wider uppercase">Artesanal</span>
                     </div>
-                </a>
+                </div>
                 
-                <!-- Menu Desktop -->
-                <nav class="hidden md:flex items-center space-x-8">
-                    <a href="index.html" class="text-gray-700 hover:text-cream-blue transition-colors font-medium relative group">
-                        Início
-                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-cream-blue transition-all duration-300 group-hover:w-full"></span>
+                <!-- Enhanced Menu Desktop -->
+                <nav class="hidden md:flex items-center space-x-1">
+                    <a href="index.html" class="relative px-4 py-2 text-gray-700 hover:text-cream-blue transition-all duration-300 font-semibold text-sm tracking-wide uppercase group">
+                        <span class="relative z-10">Início</span>
+                        <div class="absolute inset-0 bg-cream-gray rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     </a>
-                    <div class="relative group">
-                        <a href="index.html#produtos" class="text-cream-blue font-medium cursor-pointer relative">
-                            Produtos
-                            <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-cream-blue"></span>
-                        </a>
-                        <div class="absolute top-full left-0 mt-2 w-56 bg-white shadow-xl rounded-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-100">
-                            <div class="p-2">
-                                <a href="damasco.html" class="flex items-center px-4 py-3 text-gray-700 hover:text-orange-600 hover:bg-orange-50 rounded-lg transition-all duration-200">
-                                    <span class="text-xl mr-3">🍑</span>
-                                    Damasco
-                                </a>
-                                <a href="pimenta.html" class="flex items-center px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-red-50 rounded-lg transition-all duration-200">
-                                    <span class="text-xl mr-3">🌶️</span>
-                                    Pimenta
-                                </a>
-                                <a href="alho.html" class="flex items-center px-4 py-3 text-gray-700 hover:text-green-600 hover:bg-green-50 rounded-lg transition-all duration-200">
-                                    <span class="text-xl mr-3">🧄</span>
-                                    Alho
-                                </a>
-                                <a href="frutas-vermelhas.html" class="flex items-center px-4 py-3 text-pink-600 font-medium bg-pink-50 rounded-lg border-l-4 border-pink-500">
-                                    <span class="text-xl mr-3">🍓</span>
-                                    Frutas Vermelhas
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="index.html#sobre" class="text-gray-700 hover:text-cream-blue transition-colors font-medium relative group">
-                        Sobre
-                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-cream-blue transition-all duration-300 group-hover:w-full"></span>
+                    <a href="index.html#produtos" class="relative px-4 py-2 text-gray-700 hover:text-cream-blue transition-all duration-300 font-semibold text-sm tracking-wide uppercase group">
+                        <span class="relative z-10">Produtos</span>
+                        <div class="absolute inset-0 bg-cream-gray rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     </a>
-                    <a href="index.html#contato" class="text-gray-700 hover:text-cream-blue transition-colors font-medium relative group">
-                        Contato
-                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-cream-blue transition-all duration-300 group-hover:w-full"></span>
+                    <a href="index.html#sobre" class="relative px-4 py-2 text-gray-700 hover:text-cream-blue transition-all duration-300 font-semibold text-sm tracking-wide uppercase group">
+                        <span class="relative z-10">Sobre</span>
+                        <div class="absolute inset-0 bg-cream-gray rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </a>
+                    <a href="index.html#contato" class="relative px-4 py-2 text-gray-700 hover:text-cream-blue transition-all duration-300 font-semibold text-sm tracking-wide uppercase group">
+                        <span class="relative z-10">Contato</span>
+                        <div class="absolute inset-0 bg-cream-gray rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     </a>
                     
-                    <!-- CTA Button -->
-                    <a target="_blank" href="https://wa.me/5534991765159?text=Olá! Quero conhecer os deliciosos sabores do Cream UP! 🧀✨" target="_blank" class="bg-gradient-to-r from-cream-blue to-purple-600 text-white px-6 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 hover:shadow-lg hover:scale-105 flex items-center space-x-2">
-                        <i class="fas fa-whatsapp"></i>
-                        <span>Peça Já</span>
-                    </a>
+                    <!-- CTA Button in Header -->
+                    <div class="ml-6 pl-6 border-l border-gray-200">
+                        <a target="_blank" href="https://wa.me/5534991765159?text=Olá! Quero conhecer os sabores do Cream UP!" target="_blank" class="bg-gradient-to-r from-cream-yellow to-yellow-500 hover:from-yellow-500 hover:to-cream-yellow text-white px-6 py-2.5 rounded-full font-bold text-sm transition-all duration-300 shadow-lg hover:shadow-xl">
+                            <i class="fab fa-whatsapp mr-2"></i>
+                            Peça Já
+                        </a>
+                    </div>
                 </nav>
                 
-                <!-- Menu Mobile Button -->
-                <button class="md:hidden text-cream-blue text-2xl" id="menu-toggle">
-                    <i class="fas fa-bars"></i>
+                <!-- Enhanced Mobile Menu Button -->
+                <button class="md:hidden bg-cream-gray hover:bg-cream-light/20 text-cream-blue p-3 rounded-xl transition-all duration-300 shadow-md" id="menu-toggle">
+                    <i class="fas fa-bars text-lg"></i>
                 </button>
             </div>
         </div>
@@ -262,8 +242,8 @@
                 <div class="mt-6 p-4 bg-gradient-to-r from-cream-blue to-purple-600 rounded-xl text-white">
                     <h3 class="font-bold text-lg mb-2">Faça seu pedido!</h3>
                     <p class="text-sm text-white/90 mb-4">Sabores artesanais que elevam qualquer momento</p>
-                    <a target="_blank" href="https://wa.me/5534991765159?text=Olá! Quero conhecer os deliciosos sabores do Cream UP! 🧀✨" target="_blank" class="bg-white text-cream-blue px-4 py-2 rounded-full font-semibold text-sm transition-all duration-300 hover:shadow-lg flex items-center justify-center space-x-2">
-                        <i class="fas fa-whatsapp mr-2"></i>
+                    <a target="_blank" href="https://wa.me/5534991765159?text=Olá! Quero conhecer os deliciosos sabores do Cream UP!" target="_blank" class="bg-white text-cream-blue px-4 py-2 rounded-full font-semibold text-sm transition-all duration-300 hover:shadow-lg flex items-center justify-center space-x-2">
+                        <i class="fab fa-whatsapp mr-2"></i>
                         <span>Peça Já</span>
                     </a>
                 </div>
@@ -306,11 +286,11 @@
                     das frutas em perfeita harmonia
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4">
-                    <a target="_blank" href="https://wa.me/5534991765159?text=Oi! Quero uma explosão de sabor com o Cream UP Frutas Vermelhas! 🍓💥 Como posso fazer meu pedido?" target="_blank" class="bg-white text-pink-600 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 pulse-pink hover:scale-105">
+                    <a target="_blank" href="https://wa.me/5534991765159?text=Oi! Quero uma explosão de sabor com o Cream UP Frutas Vermelhas! Como posso fazer meu pedido?" target="_blank" class="bg-white text-pink-600 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 pulse-pink hover:scale-105">
                         <i class="fas fa-gem mr-2"></i>
                         Explosão de Sabor
                     </a>
-                    <a target="_blank" href="https://wa.me/5534991765159?text=Olá! Quero experimentar o frescor natural das frutas vermelhas no Cream UP! 🌈🍓 Pode me ajudar?" target="_blank" class="border-2 border-white text-white hover:bg-white hover:text-pink-600 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300">
+                    <a target="_blank" href="https://wa.me/5534991765159?text=Olá! Quero experimentar o frescor natural das frutas vermelhas no Cream UP! Pode me ajudar?" target="_blank" class="border-2 border-white text-white hover:bg-white hover:text-pink-600 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300">
                         <i class="fas fa-rainbow mr-2"></i>
                         Frescor Natural
                     </a>
@@ -898,12 +878,12 @@
                 </div>
                 
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a target="_blank" href="https://wa.me/5534991765159?text=Oi! Quero comprar o Cream UP Frutas Vermelhas por R$ 31,90! 🍓💎 Vamos finalizar meu pedido?" target="_blank" class="bg-white text-pink-600 px-10 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105 pulse-pink">
+                    <a target="_blank" href="https://wa.me/5534991765159?text=Oi! Quero comprar o Cream UP Frutas Vermelhas por R$ 31,90! Vamos finalizar meu pedido?" target="_blank" class="bg-white text-pink-600 px-10 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105 pulse-pink">
                         <i class="fas fa-gem mr-2"></i>
                         Sabor Vibrante - R$ 31,90
                     </a>
-                    <a target="_blank" href="https://wa.me/5534991765159?text=Olá! Estou interessado no Cream UP Frutas Vermelhas! 🍓✨ Quero saber mais detalhes!" target="_blank" class="border-2 border-white text-white hover:bg-white hover:text-cream-blue px-10 py-4 rounded-full font-semibold text-lg transition-all duration-300">
-                        <i class="fas fa-whatsapp mr-2"></i>
+                    <a target="_blank" href="https://wa.me/5534991765159?text=Olá! Estou interessado no Cream UP Frutas Vermelhas! Quero saber mais detalhes!" target="_blank" class="border-2 border-white text-white hover:bg-white hover:text-cream-blue px-10 py-4 rounded-full font-semibold text-lg transition-all duration-300">
+                        <i class="fab fa-whatsapp mr-2"></i>
                         WhatsApp
                     </a>
                 </div>
