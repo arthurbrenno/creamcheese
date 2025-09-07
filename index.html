@@ -63,6 +63,12 @@
         /* Scroll suave */
         html { scroll-behavior: smooth; }
         
+        /* Prevent horizontal scroll */
+        html, body {
+            overflow-x: hidden;
+            max-width: 100%;
+        }
+        
         /* Menu mobile */
         .menu-mobile {
             transform: translateX(100%);
