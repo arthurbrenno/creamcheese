@@ -683,15 +683,7 @@
             });
         });
         
-        // Parallax no hero
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const parallax = document.querySelector('section.damasco-gradient');
-            if (parallax) {
-                const speed = scrolled * 0.3;
-                parallax.style.transform = `translateY(${speed}px)`;
-            }
-        });
+        // Parallax removido
         
         // Console welcome
         console.log('%c🍑 Bem-vindo ao Cream UP Damasco! 🍑', 'color: #FF6B35; font-size: 20px; font-weight: bold;');
