@@ -313,7 +313,11 @@
     </header>
     
     <!-- Hero Section -->
-    <section id="home" class="hero-gradient min-h-screen flex items-center justify-center relative overflow-hidden" style="background-image: url('hero-produtos.png'); background-size: cover; background-position: center; background-attachment: fixed;">
+    <section id="home" class="hero-gradient min-h-screen flex items-center justify-center relative overflow-hidden">
+        <!-- Background Video -->
+        <video autoplay muted loop class="absolute inset-0 w-full h-full object-cover z-0">
+            <source src="video.mp4" type="video/mp4">
+        </video>
         <!-- Modern Overlay with dynamic gradient -->
         <div class="absolute inset-0 bg-gradient-to-tr from-black/50 via-purple-900/20 to-black/40 backdrop-blur-sm"></div>
         
@@ -421,6 +425,11 @@
                     Cada sabor conta uma história única, criada artesanalmente 
                     para proporcionar uma <span class="font-bold text-cream-blue">experiência gastronômica inesquecível</span>
                 </p>
+                
+                <!-- Hero Image moved from hero section -->
+                <div class="mt-12 mb-8" data-aos="fade-up" data-aos-delay="200">
+                    <img src="hero-produtos.png" alt="Cream UP - Produtos Artesanais" class="w-full max-w-4xl mx-auto rounded-3xl shadow-2xl">
+                </div>
             </div>
             
             <!-- Grid de Produtos Ultra-Moderno -->
